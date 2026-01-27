@@ -23,7 +23,7 @@ export default async function AboutFounder() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
                     {/* Sisi Kiri: Abstract Visual & Identitas Utama */}
-                    <div className="lg:col-span-5 space-y-8 sticky top-24">
+                    <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
                         <div className="relative aspect-square overflow-hidden rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-0 shadow-inner group">
                             {/* Abstract Pixel Background */}
                             <div className="absolute inset-0 bg-neutral-100 dark:bg-neutral-900 opacity-50 transition-opacity group-hover:opacity-100" />
@@ -118,7 +118,23 @@ export default async function AboutFounder() {
                                         Juara 3 Lomba Hackathon yang diadakan oleh UIN Raden Fatah Palembang.
                                     </p>
                                 </MagicCard>
+                                <MagicCard className="p-5 border-neutral-200 dark:border-neutral-800" gradientColor="#171717">
 
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <Award className="h-4 w-4 text-neutral-400" />
+                                        <span className="font-bold text-xs uppercase tracking-widest">Profesional CV</span>
+                                    </div>
+                                    <p className="text-xs text-neutral-500 leading-relaxed mb-4">
+                                        Unduh CV terbaru untuk melihat detail pengalaman dan kualifikasi lengkap.
+                                    </p>
+                                    <a
+                                        href="/CV-M-Abdi-Nugroho.jpg"
+                                        download="CV-M-Abdi-Nugroho.jpg"
+                                        className="inline-flex h-8 items-center justify-center rounded-md bg-neutral-900 dark:bg-neutral-100 px-4 text-xs font-medium text-neutral-50 dark:text-neutral-900 shadow transition-colors hover:bg-neutral-900/90 dark:hover:bg-neutral-100/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50"
+                                    >
+                                        Download CV
+                                    </a>
+                                </MagicCard>
                             </div>
                         </div>
 
