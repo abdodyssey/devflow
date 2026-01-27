@@ -1,4 +1,5 @@
 import AboutFounder from "@/components/sections/about-founder";
+import WhatIsDevflow from "@/components/sections/about-us";
 import AISpecialization from "@/components/sections/ai-spesialization";
 import Contact from "@/components/sections/contact";
 import Hero from "@/components/sections/hero";
@@ -17,6 +18,9 @@ export default async function HomePage() {
     <section className="pb-12 space-y-12">
       <ScrollReveal>
         <Hero />
+      </ScrollReveal>
+      <ScrollReveal>
+        <WhatIsDevflow />
       </ScrollReveal>
       <ScrollReveal>
         <Projects projects={projects || []} />

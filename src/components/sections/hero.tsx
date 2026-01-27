@@ -4,6 +4,7 @@ import { ChevronRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { RetroGrid } from "../ui/retro-grid";
 import { motion } from "framer-motion";
+import { ShimmerButton } from "../ui/shimmer-button";
 
 export default function Hero() {
     return (
@@ -56,12 +57,12 @@ export default function Hero() {
                     <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
 
-                <Link
-                    href="#contact"
-                    className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-8 text-sm font-semibold transition-all hover:bg-muted active:scale-95"
-                >
-                    Let&apos;s Talk
+                <Link href="#contact">
+                    <ShimmerButton className="h-12 items-center justify-center rounded-full border border-border dark:bg-background bg-background px-8 text-sm font-semibold transition-all hover:bg-muted active:scale-95">
+                        Let&apos;s Talk
+                    </ShimmerButton>
                 </Link>
+
             </motion.div>
 
             {/* Efek Background */}

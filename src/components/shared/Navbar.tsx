@@ -9,8 +9,10 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
     { name: "Home", href: "#" },
+    { name: "Agency", href: "#agency" },
     { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
+    { name: "Tech", href: "#tech" },
+    { name: "Founder", href: "#founder" },
 ];
 
 export default function Navbar() {

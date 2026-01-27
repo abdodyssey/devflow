@@ -5,6 +5,7 @@ import { BentoCard, BentoGrid } from "../ui/bento-grid";
 import { BorderBeam } from "../ui/border-beam";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Variabel animasi untuk container dan item
 const containerVariants: Variants = {
@@ -82,10 +83,12 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                                     className="md:col-span-1 h-full"
                                     background={
                                         <div className="absolute inset-0 overflow-hidden">
-                                            <img
+                                            <Image
                                                 src={project.image}
                                                 alt={project.title}
-                                                className="absolute right-0 top-0 h-full w-full object-cover opacity-20 transition-all duration-300 ease-out group-hover:scale-105 group-hover:opacity-40"
+                                                fill
+                                                priority
+                                                className="absolute right-0 top-0 h-full w-full object-cover  transition-all duration-300 ease-out group-hover:scale-105 group-hover:opacity-40"
                                                 style={{
                                                     maskImage: "linear-gradient(to top, transparent 10%, black 100%)",
                                                     WebkitMaskImage: "linear-gradient(to top, transparent 10%, black 100%)"

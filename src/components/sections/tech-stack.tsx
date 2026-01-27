@@ -13,7 +13,7 @@ export default function TechStack() {
     )
 
     return (
-        <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20">
+        <div id="tech" className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20">
             <div className="flex flex-col items-center text-center mb-10 space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     Tech Stack
