@@ -1,10 +1,11 @@
 import { GraduationCap, Briefcase, Award, Code2, MapPin, Sparkles } from "lucide-react";
 import { MagicCard } from "@/components/ui/magic-card";
 import { getFounderData } from "@/lib/mdx";
+import Image from "next/image";
 
 export default async function AboutFounder() {
     const data = await getFounderData();
-    const { name, username, role, avatar, location, university, major } = data?.metadata || {};
+    const { name, username, role, avatar = "/images/profile-abdi.jpg", location, university, major } = data?.metadata || {};
 
     return (
         <section id="about" className="py-24 px-6 bg-background border-t border-neutral-200 dark:border-neutral-800">
@@ -24,20 +25,24 @@ export default async function AboutFounder() {
 
                     {/* Sisi Kiri: Abstract Visual & Identitas Utama */}
                     <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
+
                         <div className="relative aspect-square overflow-hidden rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-0 shadow-inner group">
                             {/* Abstract Pixel Background */}
                             <div className="absolute inset-0 bg-neutral-100 dark:bg-neutral-900 opacity-50 transition-opacity group-hover:opacity-100" />
 
-                            <img
+                            <Image
                                 src={avatar}
-                                alt="Abstract Digital Representation"
-                                className="z-10 w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
+                                alt="M. Abdi Nugroho - Founder devflow."
+                                fill
+                                priority
+                                className="z-10 object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
                                 style={{ imageRendering: 'pixelated' }}
                             />
 
                             <div className="absolute bottom-4 left-4 z-20 bg-white/80 dark:bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800">
                                 <p className="text-xs font-mono text-neutral-600 dark:text-neutral-400 uppercase tracking-widest">
-                                    Username: {username}
+                                    {/* Pakai nama asli atau brand lu biar lebih pro buat klien */}
+                                    Founder: {username}
                                 </p>
                             </div>
                         </div>
