@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <div className="relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-background">
+        <div className="relative flex h-[600px] w-full flex-col items-center justify-center mt-10 overflow-hidden bg-background">
 
             {/* 1. Badge Status (Optional) */}
             <motion.div
