@@ -9,8 +9,8 @@ export default function TechStack() {
     ];
 
     const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
-  )
+        (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+    )
 
     return (
         <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20">
@@ -22,10 +22,10 @@ export default function TechStack() {
                     Alat dan teknologi yang gue gunakan untuk membangun solusi digital di <strong>DevFlow</strong>.
                 </p>
             </div>
-            
+
 
             <div className="relative flex h-[400px] w-full max-w-[400px] items-center justify-center">
-                <IconCloud images={images} />
+                <IconCloud images={images} iconSlugs={slugs} />
             </div>
         </div>
     );

@@ -14,7 +14,7 @@ export default function AISpecialization() {
             </div>
 
             {/* Orbiting Circles Center Icon */}
-            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
+            <span className="pointer-events-none whitespace-pre-wrap bg-linear-to-b from-black to-gray-300 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
                 <BrainCircuit className="h-20 w-20 text-primary" />
             </span>
 

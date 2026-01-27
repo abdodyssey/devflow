@@ -4,6 +4,7 @@ import { Briefcase, Code2, Globe, Sparkles } from "lucide-react";
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
 import { BorderBeam } from "../ui/border-beam";
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 
 // Variabel animasi untuk container dan item
 const containerVariants: Variants = {
@@ -72,12 +73,13 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                                 />
 
                                 <BentoCard
+                                    key={project.slug}
                                     name={project.title}
                                     description={project.summary}
                                     href={`/projects/${project.slug}`}
                                     cta="Explore Project"
-                                    // Ikon dinamis
                                     Icon={idx % 2 === 0 ? Code2 : Globe}
+                                    className="md:col-span-1 h-full"
                                     background={
                                         <div className="absolute inset-0 overflow-hidden">
                                             <img
@@ -91,8 +93,12 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                                             />
                                         </div>
                                     }
-                                    className="md:col-span-1 h-full"
-                                />
+                                >
+                                    {/* Bungkus CTA atau Card dengan Link */}
+                                    <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-20">
+                                        <span className="sr-only">Explore {project.title}</span>
+                                    </Link>
+                                </BentoCard>
                             </div>
                         </motion.div>
 

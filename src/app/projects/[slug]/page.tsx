@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     return (
         <article className="min-h-screen w-full pb-20 pt-10">
-            <div className="mx-auto max-w-4xl px-6">
+            <div className="mx-auto max-w-4xl px-6 mt-20">
                 {/* Back Button */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}

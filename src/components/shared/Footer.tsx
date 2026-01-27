@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"; // Ikon dari Lucide
+import { Github, Instagram, Mail } from "lucide-react"; // Ikon dari Lucide
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full border-t border-border/40 bg-background">
+        <footer className="w-full border-t border-border/40 bg-background px-12">
             <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0 px-6 md:px-12">
 
                 {/* Bagian Kiri: Copyright & Brand */}
@@ -17,8 +17,15 @@ export default function Footer() {
 
                 {/* Bagian Kanan: Social Links */}
                 <div className="flex items-center gap-6">
+                     <Link
+                        href="https://www.instagram.com/devflow___"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        <Instagram className="h-5 w-5" />
+                        <span className="sr-only">Instagram</span>
+                    </Link>
                     <Link
-                        href="https://github.com/username-lu"
+                        href="https://github.com/abdodyssey"
                         target="_blank"
                         rel="noreferrer"
                         className="text-muted-foreground hover:text-foreground transition-colors"
@@ -26,17 +33,9 @@ export default function Footer() {
                         <Github className="h-5 w-5" />
                         <span className="sr-only">GitHub</span>
                     </Link>
+                    
                     <Link
-                        href="https://linkedin.com/in/username-lu"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                        <Linkedin className="h-5 w-5" />
-                        <span className="sr-only">LinkedIn</span>
-                    </Link>
-                    <Link
-                        href="mailto:email-lu@example.com"
+                        href="mailto:devflow99@gmail.com"
                         className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                         <Mail className="h-5 w-5" />

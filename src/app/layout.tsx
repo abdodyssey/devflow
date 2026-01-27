@@ -6,6 +6,7 @@ import Footer from "@/components/shared/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import CustomCursor from "@/components/ui/custom-cursor";
 import ScrollToTop from "@/components/ui/scroll-to-top";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,21 @@ export default function RootLayout({
             <main className="flex flex-1 flex-col px-6 pt-0 pb-12 md:px-12 lg:px-24">
               {children}
             </main>
+            <Toaster
+              position="top-center"
+              richColors
+              closeButton
+              theme="system"
+              toastOptions={{
+                className: "my-custom-toast", // ID untuk CSS di atas
+                style: {
+                  borderRadius: '12px',
+                  background: 'var(--background)',
+                  color: 'var(--foreground)',
+                  border: '1px solid var(--border)',
+                },
+              }}
+            />
             <Footer />
             <ScrollToTop />
           </div>

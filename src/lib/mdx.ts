@@ -45,3 +45,23 @@ export async function getProjectBySlug(slug: string) {
 
     return { metadata: data as ProjectMetadata, content }
 }
+
+export type FounderMetadata = {
+    name: string;
+    username: string;
+    role: string;
+    avatar: string;
+    location: string;
+    university: string;
+    major: string;
+};
+
+export async function getFounderData() {
+    const filePath = path.join(process.cwd(), 'src/content/about/founder.mdx');
+    if (!fs.existsSync(filePath)) {
+        return null;
+    }
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { data, content } = matter(fileContent);
+    return { metadata: data as FounderMetadata, content };
+}

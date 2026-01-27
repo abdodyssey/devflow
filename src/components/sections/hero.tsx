@@ -25,7 +25,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-foreground to-muted-foreground bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent md:text-8xl"
+                className="pointer-events-none z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent md:text-8xl"
             >
                 Build with devflow.
             </motion.h1>
@@ -68,7 +68,7 @@ export default function Hero() {
             <RetroGrid className="opacity-50" />
 
             {/* Overlay Gradient (Bikin transisi ke section bawah lebih smooth) */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent z-10" />
         </div>
     );
 }

@@ -21,7 +21,7 @@ function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3)
 }
 
-export function IconCloud({ icons, images }: IconCloudProps) {
+export function IconCloud({ icons, images, iconSlugs }: IconCloudProps & { iconSlugs?: string[] }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [iconPositions, setIconPositions] = useState<Icon[]>([])
   const [rotation, setRotation] = useState({ x: 0, y: 0 })
@@ -251,6 +251,14 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         }
       }
 
+      let hoveredIcon: {
+        x: number
+        y: number
+        name: string
+        scale: number
+        z: number
+      } | null = null
+
       iconPositions.forEach((icon, index) => {
         const cosX = Math.cos(rotationRef.current.x)
         const sinX = Math.sin(rotationRef.current.x)
@@ -264,13 +272,15 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         const scale = (rotatedZ + 200) / 300
         const opacity = Math.max(0.2, Math.min(1, (rotatedZ + 150) / 200))
 
+        const screenX = canvas.width / 2 + rotatedX
+        const screenY = canvas.height / 2 + rotatedY
+
         ctx.save()
-        ctx.translate(canvas.width / 2 + rotatedX, canvas.height / 2 + rotatedY)
+        ctx.translate(screenX, screenY)
         ctx.scale(scale, scale)
         ctx.globalAlpha = opacity
 
         if (icons || images) {
-          // Only try to render icons/images if they exist
           if (
             iconCanvasesRef.current[index] &&
             imagesLoadedRef.current[index]
@@ -278,7 +288,6 @@ export function IconCloud({ icons, images }: IconCloudProps) {
             ctx.drawImage(iconCanvasesRef.current[index], -20, -20, 40, 40)
           }
         } else {
-          // Show numbered circles if no icons/images are provided
           ctx.beginPath()
           ctx.arc(0, 0, 20, 0, Math.PI * 2)
           ctx.fillStyle = "#4444ff"
@@ -291,7 +300,62 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         }
 
         ctx.restore()
+
+        // Check for hover
+        if (iconSlugs && iconSlugs[index]) {
+          const radius = 20 * scale
+          const mouseDx = mousePos.x - screenX
+          const mouseDy = mousePos.y - screenY
+          if (mouseDx * mouseDx + mouseDy * mouseDy < radius * radius) {
+            // If multiple overlapping, pick closest (highest Z)
+            if (!hoveredIcon || rotatedZ > hoveredIcon.z) {
+              hoveredIcon = {
+                x: screenX,
+                y: screenY,
+                name: iconSlugs[index],
+                scale: scale,
+                z: rotatedZ
+              }
+            }
+          }
+        }
       })
+
+      // Draw Tooltip
+      if (hoveredIcon) {
+        const { x, y, name } = hoveredIcon
+        ctx.save()
+        ctx.font = "bold 14px Inter, sans-serif"
+        const metrics = ctx.measureText(name)
+        const padding = 10
+        const textWidth = metrics.width
+        const textHeight = 14 // approx
+        const boxWidth = textWidth + padding * 2
+        const boxHeight = textHeight + padding * 2
+
+        // Tooltip position (above icon)
+        const tooltipX = x
+        const tooltipY = y - 40
+
+        // Draw background rounded rect
+        ctx.beginPath()
+        ctx.roundRect(tooltipX - boxWidth / 2, tooltipY - boxHeight / 2, boxWidth, boxHeight, 8)
+        ctx.fillStyle = "rgba(0, 0, 0, 0.8)"
+        ctx.fill()
+
+        // Draw text
+        ctx.fillStyle = "white"
+        ctx.textAlign = "center"
+        ctx.textBaseline = "middle"
+        ctx.fillText(name, tooltipX, tooltipY)
+        ctx.restore()
+
+        // Draw cursor pointer
+        canvas.style.cursor = 'pointer'
+      } else {
+        canvas.style.cursor = 'default'
+      }
+
       animationFrameRef.current = requestAnimationFrame(animate)
     }
 
@@ -302,7 +366,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [icons, images, iconPositions, isDragging, mousePos, targetRotation])
+  }, [icons, images, iconPositions, isDragging, mousePos, targetRotation, iconSlugs])
 
   return (
     <canvas

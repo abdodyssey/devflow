@@ -53,7 +53,7 @@ export default function CustomCursor() {
         <>
             {/* The Orbiting Ring (Dashed for space HUD effect) */}
             <motion.div
-                className="pointer-events-none fixed left-0 top-0 z-[9998] rounded-full border-[1.5px] border-dashed border-primary mix-blend-difference"
+                className="pointer-events-none fixed left-0 top-0 z-9998 rounded-full border-[1.5px] border-dashed border-primary mix-blend-difference"
                 style={{
                     x: orbitX,
                     y: orbitY,
@@ -72,7 +72,7 @@ export default function CustomCursor() {
 
             {/* The Central Star */}
             <motion.div
-                className="pointer-events-none fixed left-0 top-0 z-[9999] h-3 w-3 rounded-full bg-primary mix-blend-difference shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                className="pointer-events-none fixed left-0 top-0 z-9999 h-3 w-3 rounded-full bg-primary mix-blend-difference shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                 style={{
                     x: mainX,
                     y: mainY,

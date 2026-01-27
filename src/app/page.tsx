@@ -1,3 +1,4 @@
+import AboutFounder from "@/components/sections/about-founder";
 import AISpecialization from "@/components/sections/ai-spesialization";
 import Contact from "@/components/sections/contact";
 import Hero from "@/components/sections/hero";
@@ -25,6 +26,9 @@ export default async function HomePage() {
       </ScrollReveal>
       <ScrollReveal>
         <AISpecialization />
+      </ScrollReveal>
+      <ScrollReveal>
+        <AboutFounder />
       </ScrollReveal>
       <ScrollReveal>
         <Contact />
