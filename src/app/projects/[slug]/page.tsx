@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
 import * as motion from "framer-motion/client";
-import { BorderBeam } from "@/components/ui/border-beam";
 import { Badge } from "@/components/ui/badge";
 
 // 1. Import ProjectSlider lu di sini
@@ -44,7 +43,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         className="group inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8"
                     >
                         <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                        Back to projects
+                        Back to portfolio
                     </Link>
                 </motion.div>
 
@@ -71,12 +70,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 <time dateTime={metadata.publishedAt}>
                                     {new Date(metadata.publishedAt).toLocaleDateString("en-US", {
                                         month: "long",
+                                        day: "2-digit",
                                         year: "numeric",
                                     })}
                                 </time>
                             </div>
                         )}
+
                         <span className="hidden text-muted-foreground md:inline">•</span>
+
                         <div className="flex flex-wrap gap-2">
                             {metadata.tech.map((t: string) => (
                                 <Badge key={t} variant="secondary" className="rounded-full px-3 py-1 text-xs">
@@ -86,6 +88,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         </div>
                     </div>
                 </motion.div>
+
                 <hr className="my-8 border-border/40" />
 
                 {/* MDX Content */}
@@ -94,14 +97,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="prose prose-zinc dark:prose-invert max-w-none
-                        prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground
-                        prose-p:text-muted-foreground prose-p:leading-relaxed
-                        prose-li:text-muted-foreground
-                        prose-strong:font-medium prose-strong:text-foreground
-                        prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:underline
-                        prose-img:rounded-xl prose-img:shadow-lg
-                        prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800
-                        prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-normal prose-code:before:content-none prose-code:after:content-none"
+            prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground
+            prose-p:text-muted-foreground prose-p:leading-relaxed
+            prose-li:text-muted-foreground
+            prose-strong:font-medium prose-strong:text-foreground
+            prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+            prose-img:rounded-xl prose-img:shadow-lg
+            prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800
+            prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-normal prose-code:before:content-none prose-code:after:content-none"
                 >
                     {/* 3. Masukkan objek components ke MDXRemote */}
                     <MDXRemote source={content} components={components} />

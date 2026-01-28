@@ -40,15 +40,15 @@ export default function WhatIsDevflow() {
 
                         <div className="prose prose-neutral dark:prose-invert">
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                <strong>Devflow</strong> adalah sebuah <strong>creative technology agency</strong> berbasis di Palembang yang berfokus pada transformasi ide kompleks menjadi solusi digital yang fungsional, terukur, dan berkelanjutan.
+                                Devflow adalah sebuah creative technology agency berbasis di Palembang yang berfokus pada transformasi ide kompleks menjadi solusi digital yang fungsional, terukur, dan berkelanjutan.
                             </p>
 
                             <p className="text-neutral-500">
-                                Didirikan oleh tim berlatar belakang <strong>Sistem Informasi</strong>, Devflow mengedepankan proses pengembangan yang transparan, terstruktur, dan berorientasi pada kebutuhan bisnis maupun institusi.
+                                Kami mengedepankan proses pengembangan yang terstruktur, transparan, dan berorientasi pada kebutuhan bisnis, dengan pendekatan teknologi modern yang menyesuaikan skala dan tujuan setiap klien.
                             </p>
 
                             <p className="text-neutral-500">
-                                Mulai dari pengembangan sistem akademik seperti <strong>E-Skripsi</strong> hingga dukungan teknis dan pemeliharaan infrastruktur IT, kami hadir sebagai mitra teknologi yang dapat diandalkan.
+                                Dengan keahlian di bidang pengembangan website dan web application, AI automation, serta integrasi kecerdasan buatan ke dalam sistem digital, Devflow hadir sebagai mitra teknologi strategis untuk membantu organisasi meningkatkan efisiensi, performa, dan daya saing digital.
                             </p>
                         </div>
                     </div>

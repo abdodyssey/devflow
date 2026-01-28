@@ -47,7 +47,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="z-10 mt-10 flex flex-col sm:flex-row gap-4"
+                className="z-10 mt-10 flex flex-col sm:flex-row items-center gap-4"
             >
                 <Link
                     href="#projects"
@@ -58,7 +58,7 @@ export default function Hero() {
                 </Link>
 
                 <Link href="#contact">
-                    <ShimmerButton className="h-12 items-center justify-center rounded-full border border-border dark:bg-background bg-background px-8 text-sm font-semibold transition-all hover:bg-muted active:scale-95">
+                    <ShimmerButton className="cursor-pointer h-12 items-center justify-center rounded-full border border-border dark:bg-background bg-background px-8 text-sm font-semibold transition-all hover:bg-muted active:scale-95">
                         Let&apos;s Talk
                     </ShimmerButton>
                 </Link>

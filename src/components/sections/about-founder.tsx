@@ -53,7 +53,16 @@ export default async function AboutFounder() {
                             </div>
 
                             <div className="flex flex-wrap gap-2">
-                                {["Next.js", "Prisma ORM", "Tailwind CSS", "PostgreSQL", "AI Automation", "MySQL"].map((tag) => (
+                                {[
+                                    "Web Development",
+                                    "Web Applications",
+                                    "Next.js",
+                                    "Laravel",
+                                    "AI Automation",
+                                    "AI Integration",
+                                    "Backend APIs",
+                                    "Cloud Deployment",
+                                ].map((tag) => (
                                     <span
                                         key={tag}
                                         className="px-3 py-1 text-[10px] uppercase tracking-wider font-bold rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400"
@@ -61,6 +70,7 @@ export default async function AboutFounder() {
                                         {tag}
                                     </span>
                                 ))}
+
                             </div>
                         </div>
                     </div>
@@ -71,13 +81,13 @@ export default async function AboutFounder() {
                         <div className="space-y-4">
                             <div className="flex items-center gap-3 text-neutral-900 dark:text-neutral-100">
                                 <GraduationCap className="h-5 w-5" />
-                                <h4 className="text-xl font-bold uppercase tracking-tight">AKADEMIK & PENDIDIKAN</h4>
+                                <h4 className="text-xl font-bold uppercase tracking-tight">PROFFESIONAL FOCUS</h4>
                             </div>
                             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify">
-                                Sebagai mahasiswa {major} di {university}, fokus profesional saya adalah membangun solusi perangkat lunak
-                                yang rapi secara arsitektur, terukur, dan mudah dikembangkan. Saya terbiasa menerjemahkan kebutuhan
-                                bisnis menjadi implementasi teknis yang efisien, dengan perhatian pada kualitas, dokumentasi, dan
-                                keberlanjutan sistem.
+                                Saya memiliki latar belakang di bidang pengembangan sistem dan solusi digital, dengan fokus pada
+                                perancangan arsitektur aplikasi yang rapi, terukur, dan mudah dikembangkan. Pendekatan kerja saya
+                                berorientasi pada kebutuhan bisnis, dengan penekanan pada kualitas kode, efisiensi sistem, serta
+                                keberlanjutan jangka panjang.
                             </p>
                         </div>
 
@@ -91,25 +101,25 @@ export default async function AboutFounder() {
                             <div className="space-y-8 border-l border-neutral-200 dark:border-neutral-800 pl-6 ml-2.5">
                                 <div className="relative">
                                     <div className="absolute -left-[30.5px] top-1.5 h-2 w-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
-                                    <h5 className="font-bold text-lg leading-none">Frontend Engineer — E-Thesis System</h5>
-                                    <p className="text-xs text-neutral-500 mt-1 uppercase tracking-wide">University Internship Project</p>
+                                    <h5 className="font-bold text-lg leading-none">Frontend Engineer — Web-Based Information System</h5>
+                                    <p className="text-xs text-neutral-500 mt-1 uppercase tracking-wide"> Web Application Development Project</p>
                                     <p className="text-neutral-600 dark:text-neutral-400 mt-3 text-sm leading-relaxed">
-                                        Berkontribusi dalam pengembangan antarmuka pengguna untuk platform manajemen tugas akhir, sekaligus
-                                        memastikan konsistensi UI/UX dan standarisasi dokumentasi pengujian guna mendukung stabilitas serta
-                                        reliabilitas aplikasi.
+                                        Bertanggung jawab dalam pengembangan antarmuka pengguna untuk sistem berbasis web, dengan fokus
+                                        pada konsistensi UI/UX, performa aplikasi, serta kejelasan alur penggunaan guna mendukung
+                                        pengalaman pengguna yang optimal.
                                     </p>
                                 </div>
 
                                 <div className="relative">
                                     <div className="absolute -left-[30.5px] top-1.5 h-2 w-2 rounded-full bg-neutral-400" />
-                                    <h5 className="font-bold text-lg leading-none">Fullstack Developer — Eco Masjid</h5>
+                                    <h5 className="font-bold text-lg leading-none"> Fullstack Developer — Digital Platform Project</h5>
                                     <p className="text-xs text-neutral-500 mt-1 uppercase tracking-wide">
-                                        Technology & Sustainability Initiative
+                                        Web & System Development Initiative
                                     </p>
                                     <p className="text-neutral-600 dark:text-neutral-400 mt-3 text-sm leading-relaxed text-justify">
-                                        Mengimplementasikan MERN stack untuk membangun infrastruktur digital yang mendukung inisiatif
-                                        keberlanjutan, dengan fokus pada performa, optimasi proses, serta pengalaman pengguna yang responsif
-                                        dan stabil.
+                                        Mengembangkan aplikasi web end-to-end dengan pendekatan fullstack, mencakup perancangan backend,
+                                        integrasi API, serta implementasi antarmuka yang responsif dan stabil untuk mendukung kebutuhan
+                                        operasional sistem.
                                     </p>
                                 </div>
                             </div>
@@ -129,8 +139,10 @@ export default async function AboutFounder() {
                                         <span className="font-bold text-xs uppercase tracking-widest">Hackathon — 3rd Place</span>
                                     </div>
                                     <p className="text-xs text-neutral-500 leading-relaxed">
-                                        Meraih Juara 3 pada kompetisi Hackathon yang diselenggarakan oleh UIN Raden Fatah Palembang.
+                                        Meraih peringkat ketiga dalam kompetisi Hackathon tingkat regional yang berfokus pada pengembangan
+                                        solusi digital dan inovasi teknologi.
                                     </p>
+
                                 </MagicCard>
 
                                 <MagicCard className="p-5 border-neutral-200 dark:border-neutral-800" gradientColor="#171717">

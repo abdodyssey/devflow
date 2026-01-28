@@ -41,7 +41,7 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                     Featured Projects
                 </h2>
                 <p className="text-muted-foreground max-w-[600px] md:text-xl">
-                    Kumpulan sistem yang gue bangun, mulai dari platform e-skripsi hingga automasi cerdas.
+                    Portofolio solusi yang telah saya kembangkan—mulai dari platform akademik hingga automasi dan sistem berbasis AI.
                 </p>
             </div>
 
@@ -59,7 +59,6 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                             className={`relative flex flex-col overflow-hidden rounded-xl border bg-background ${idx === 0 || idx === 3 ? "md:col-span-2" : "md:col-span-1"
                                 }`}
                         >
-
                             <div
                                 key={project.slug}
                                 className="group relative flex h-full flex-col overflow-hidden rounded-xl"
@@ -78,7 +77,7 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                                     name={project.title}
                                     description={project.summary}
                                     href={`/projects/${project.slug}`}
-                                    cta="Explore Project"
+                                    cta="View Case Study"
                                     Icon={idx % 2 === 0 ? Code2 : Globe}
                                     className="md:col-span-1 h-full"
                                     background={
@@ -88,10 +87,10 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                                                 alt={project.title}
                                                 fill
                                                 priority
-                                                className="absolute right-0 top-0 h-full w-full object-cover  transition-all duration-300 ease-out group-hover:scale-105 group-hover:opacity-40"
+                                                className="absolute right-0 top-0 h-full w-full object-cover transition-all duration-300 ease-out group-hover:scale-105 group-hover:opacity-40"
                                                 style={{
                                                     maskImage: "linear-gradient(to top, transparent 10%, black 100%)",
-                                                    WebkitMaskImage: "linear-gradient(to top, transparent 10%, black 100%)"
+                                                    WebkitMaskImage: "linear-gradient(to top, transparent 10%, black 100%)",
                                                 }}
                                             />
                                         </div>
@@ -99,14 +98,12 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                                 >
                                     {/* Bungkus CTA atau Card dengan Link */}
                                     <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-20">
-                                        <span className="sr-only">Explore {project.title}</span>
+                                        <span className="sr-only">View details for {project.title}</span>
                                     </Link>
                                 </BentoCard>
                             </div>
                         </motion.div>
-
                     ))}
-
                 </BentoGrid>
             </motion.div>
         </section>
