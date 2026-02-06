@@ -1,11 +1,11 @@
 "use client"
 import { getAllProjectsMetadata, ProjectMetadata } from "@/lib/mdx";
 import { Briefcase, Code2, Globe, Sparkles } from "lucide-react";
-import { BentoCard, BentoGrid } from "../ui/bento-grid";
-import { BorderBeam } from "../ui/border-beam";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { BorderBeam } from "../ui/border-beam";
+import { BentoCard, BentoGrid } from "../ui/bento-grid";
 
 // Variabel animasi untuk container dan item
 const containerVariants: Variants = {
@@ -34,7 +34,7 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
     // Ambil data dari folder src/content/projects
 
     return (
-        <section id="projects" className="py-12 space-y-12">
+        <section id="projects" className="py-12 space-y-12 max-w-4xl mx-auto">
             {/* Header Section */}
             <div className="flex flex-col items-center text-center space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -51,7 +51,7 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <BentoGrid className="grid-cols-1 md:grid-cols-3">
+                <BentoGrid className="grid-cols-1 md:grid-cols-4">
                     {projects.map((project, idx) => (
                         <motion.div
                             key={project.slug}

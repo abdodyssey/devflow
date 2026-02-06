@@ -3,7 +3,7 @@ import { OrbitingCircles } from "../ui/orbiting-circles";
 
 export default function AISpecialization() {
     return (
-        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden py-20">
+        <div className="relative flex h-[500px] w-full max-w-4xl mx-auto flex-col items-center justify-center overflow-hidden py-20">
             <div className="z-10 flex flex-col items-center text-center mb-10 space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     AI & Automation

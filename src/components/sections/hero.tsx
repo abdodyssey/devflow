@@ -8,25 +8,15 @@ import { ShimmerButton } from "../ui/shimmer-button";
 
 export default function Hero() {
     return (
-        <div className="relative flex h-[600px] w-full flex-col items-center justify-center mt-10 overflow-hidden bg-background">
-
-            {/* 1. Badge Status (Optional) */}
-            <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="z-10 mb-4 flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-xs font-medium text-blue-600 dark:text-blue-400"
-            >
-                <Sparkles className="h-3 w-3" />
-                <span>Available for new projects in 2026</span>
-            </motion.div>
+        <div className="relative flex h-[600px] max-w-4xl mx-auto flex-col items-center justify-center mt-8 overflow-hidden bg-background">
+           
 
             {/* 2. Teks Utama dengan Animasi */}
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="pointer-events-none z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent md:text-8xl"
+                className="pointer-events-none pt-10 z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent md:text-8xl"
             >
                 Build with devflow.
             </motion.h1>

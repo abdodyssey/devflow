@@ -57,7 +57,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-20 max-w-4xl mx-auto rounded-xl">
             <MagicCard
                 className="flex flex-col items-center justify-center p-6 md:p-12 text-center shadow-2xl overflow-hidden"
                 gradientColor="#262626"

@@ -8,7 +8,7 @@ import { ModeToggle } from "../mode-toggle";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "Agency", href: "#agency" },
     { name: "Projects", href: "#projects" },
     { name: "Tech", href: "#tech" },
@@ -17,7 +17,7 @@ const navItems = [
 
 export default function Navbar() {
     const pathname = usePathname();
-    const isProjectPage = pathname?.startsWith('/projects/');
+    const isProjectPage = pathname?.startsWith('/projects/') || pathname?.startsWith('/portfolio');
 
     return (
         /* Wrapper untuk posisi floating di tengah atas */
@@ -27,12 +27,12 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 /* Pointer-events-auto supaya klik kembali berfungsi di dalam navbar */
-                className="pointer-events-auto w-full max-w-4xl border border-border/40 bg-background/80 backdrop-blur-md rounded-full shadow-lg"
+                className="pointer-events-auto w-full max-w-4xl border border-border/40 bg-background/80 backdrop-blur-md rounded-xl shadow-lg"
             >
                 <div className="container mx-auto flex h-14 items-center justify-between px-6">
 
                     {/* Logo devflow. */}
-                    <Link href="#home" className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-2">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
