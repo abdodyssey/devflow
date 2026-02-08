@@ -1,3 +1,4 @@
+import React from "react";
 import { GraduationCap, Briefcase, Code2, Rocket, ArrowUpRight } from "lucide-react";
 import { MagicCard } from "@/components/ui/magic-card";
 import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
