@@ -5,27 +5,27 @@ import { Sparkles, Zap, TrendingUp, ShieldCheck } from "lucide-react";
 
 const solutions = [
   {
-    title: "Sederhanakan Operasional Bisnis",
+    title: "Transformasi Operasional",
     description:
-      "Ubah alur kerja manual yang rumit menjadi sistem web yang efisien, terstruktur, dan mudah dikelola.",
+      "Ubah proses manual yang lambat menjadi alur kerja digital yang terotomatisasi. Efisiensi meningkat, kesalahan manusia berkurang drastis.",
     icon: <Sparkles className="h-6 w-6 text-blue-500" />,
   },
   {
-    title: "Otomatisasi Tugas Repetitif",
+    title: "Otomatisasi Cerdas",
     description:
-      "Hemat waktu dan biaya dengan mengotomatisasi tugas berulang, sehingga tim Anda bisa fokus pada hal strategis.",
+      "Biarkan teknologi bekerja untuk Anda. Sistem akan menangani tugas administratif rutin secara otomatis, memberi Anda waktu untuk fokus pada strategi.",
     icon: <Zap className="h-6 w-6 text-yellow-500" />,
   },
   {
-    title: "Sistem yang Siap Tumbuh",
+    title: "Skalabilitas Bisnis",
     description:
-      "Bangun pondasi digital yang tidak hanya bagus sekarang, tapi siap menampung lonjakan bisnis Anda di masa depan.",
+      "Bangun fondasi teknologi yang kokoh. Sistem dirancang untuk tetap stabil dan cepat bahkan saat transaksi bisnis Anda meningkat berkali lipat.",
     icon: <TrendingUp className="h-6 w-6 text-green-500" />,
   },
   {
     title: "Solusi Tepat Guna",
     description:
-      "Bukan sekadar fitur canggih, tapi fitur yang benar-benar menyelesaikan masalah spesifik dalam bisnis Anda.",
+      "Fokus pada dampak, bukan kerumitan. Antarmuka yang intuitif memastikan tim Anda dapat langsung menggunakan sistem tanpa pelatihan panjang.",
     icon: <ShieldCheck className="h-6 w-6 text-purple-500" />,
   },
 ];
@@ -45,7 +45,8 @@ export default function SolutionSection() {
             transition={{ duration: 0.5 }}
             className="text-4xl font-bold tracking-tighter sm:text-5xl"
           >
-            The Solutions <span className="text-neutral-400">I Offer</span>
+            Solusi Digital untuk{" "}
+            <span className="text-neutral-400">Bisnis Anda</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -54,8 +55,8 @@ export default function SolutionSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-muted-foreground"
           >
-            Saya tidak menjual produk atau fitur, tetapi membantu merancang
-            solusi yang sesuai dengan kondisi dan tujuan bisnis Anda.
+            Fokus kami adalah menciptakan alat digital yang menyelesaikan
+            masalah nyata operasional Anda, bukan sekadar pelengkap visual.
           </motion.p>
         </div>
 

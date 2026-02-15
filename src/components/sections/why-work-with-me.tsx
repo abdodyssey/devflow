@@ -12,37 +12,37 @@ import {
 
 const advantages = [
   {
-    title: "Mindset Bisnis, Bukan Cuma Kode",
+    title: "Orientasi Profit & Efisiensi",
     description:
-      "Saya mengerti bahwa kode hanyalah alat. Tujuan akhirnya adalah profit, efisiensi, dan pertumbuhan bisnis Anda.",
+      "Lebih dari sekadar kode. Kami merancang sistem yang berdampak langsung pada penghematan biaya dan peningkatan profit bisnis Anda.",
     icon: Target,
     color: "text-blue-500",
   },
   {
-    title: "Komunikasi Tanpa Perantara",
+    title: "Komunikasi Langsung",
     description:
-      "Anda bicara langsung dengan pembuatnya. Tidak ada miskomunikasi lewat account manager atau sales.",
+      "Anda berdiskusi langsung dengan pembuatnya. Tidak ada distorsi informasi lewat sales atau project manager.",
     icon: MessageSquare,
     color: "text-purple-500",
   },
   {
-    title: "Biaya Lebih Efisien",
+    title: "Investasi Cerdas",
     description:
-      "Tanpa overhead agensi besar, Anda mendapatkan kualitas premium dengan investasi yang lebih masuk akal.",
+      "Dapatkan kualitas sistem kelas atas dengan biaya yang dialokasikan sepenuhnya untuk pengembangan, bukan overhead kantor mewah.",
     icon: Zap,
     color: "text-yellow-500",
   },
   {
-    title: "Solusi Custom & Fleksibel",
+    title: "Sesuai Karakter Bisnis",
     description:
-      "Tidak ada template kaku. Sistem dibangun mengikuti cara kerja bisnis Anda, bukan sebaliknya.",
+      "Anda tidak perlu mengubah cara kerja demi sistem. Kami yang membangun sistem agar pas dengan alur unik bisnis Anda.",
     icon: Settings2,
     color: "text-red-500",
   },
   {
-    title: "Partner Jangka Panjang",
+    title: "Dukungan Berkelanjutan",
     description:
-      "Saya tidak lari setelah project selesai. Saya siap menjadi partner teknis yang menjaga sistem tetap berjalan optimal.",
+      "Hubungan kita tidak putus saat website rilis. Kami siap menjaga performa sistem Anda dalam jangka panjang.",
     icon: Handshake,
     color: "text-green-500",
   },
@@ -68,7 +68,7 @@ export default function WhyWorkWithMe() {
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider"
             >
               <UserCheck className="w-3 h-3" />
-              The Solo Advantage
+              Pendekatan Kami
             </motion.div>
 
             <motion.h2
@@ -77,8 +77,8 @@ export default function WhyWorkWithMe() {
               viewport={{ once: true }}
               className="text-4xl font-bold tracking-tighter sm:text-5xl"
             >
-              Why Work <br />
-              <span className="text-neutral-400">With Me?</span>
+              Kenapa Harus <br />
+              <span className="text-neutral-400">Kami?</span>
             </motion.h2>
 
             <motion.p
@@ -88,10 +88,9 @@ export default function WhyWorkWithMe() {
               transition={{ delay: 0.1 }}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              Saya menawarkan keunggulan dari model{" "}
-              <span className="text-foreground font-semibold">Solo Agency</span>{" "}
-              yang mengutamakan kedekatan, kecepatan, dan kualitas yang sangat
-              terjaga.
+              Kami menawarkan dedikasi personal yang sulit didapatkan dari
+              agensi besar. Satu pintu komunikasi, satu visi, dan eksekusi yang
+              konsisten untuk bisnis Anda.
             </motion.p>
           </div>
 

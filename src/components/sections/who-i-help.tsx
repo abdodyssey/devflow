@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Store, LineChart, Workflow, Users } from "lucide-react";
+import { Store, LineChart, Users } from "lucide-react";
 import { MagicCard } from "../ui/magic-card";
 
 const targets = [
   {
     title: "Pemilik Bisnis & UMKM",
     description:
-      "Ingin beralih ke digital, menjangkau pasar lebih luas, dan mengelola pesanan dengan lebih teratur.",
+      "Anda yang ingin bisnisnya 'naik kelas'. Punya website resmi agar lebih dipercaya, serta sistem operasional yang tidak lagi manual.",
     icon: Store,
     color: "text-blue-500",
     bg: "bg-blue-500/10",
@@ -16,15 +16,15 @@ const targets = [
   {
     title: "Perusahaan Berkembang",
     description:
-      "Membutuhkan sistem yang bisa menangani lonjakan transaksi dan pelanggan tanpa menambah beban kerja manual tim.",
+      "Bisnis yang transaksinya makin ramai. Anda butuh sistem inventory, keuangan, atau manajemen tim yang lebih serius dan terintegrasi.",
     icon: LineChart,
     color: "text-green-500",
     bg: "bg-green-500/10",
   },
   {
-    title: "Startups & Visioner",
+    title: "Organisasi & Profesional",
     description:
-      "Membutuhkan MVP atau prototipe fungsional untuk menguji ide bisnis dengan cepat dan efisien.",
+      "Institusi, komunitas, atau konsultan yang membutuhkan platform digital representatif untuk menjangkau audiens dan melayani anggota.",
     icon: Users,
     color: "text-orange-500",
     bg: "bg-orange-500/10",
@@ -45,11 +45,12 @@ export default function WhoIHelp() {
             viewport={{ once: true }}
             className="text-4xl font-bold tracking-tighter sm:text-5xl"
           >
-            Who Can I <span className="text-neutral-400">Help?</span>
+            Siapa yang Cocok{" "}
+            <span className="text-neutral-400">Kami Bantu?</span>
           </motion.h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Solusi yang saya tawarkan dirancang khusus untuk berbagai skala dan
-            kebutuhan entitas bisnis.
+            Layanan kami dirancang khusus untuk Anda yang serius ingin membenahi
+            fondasi digital bisnis, dari skala kecil hingga menengah.
           </p>
         </div>
 

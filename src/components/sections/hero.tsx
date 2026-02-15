@@ -14,10 +14,11 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="pointer-events-none pt-10 z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-5xl font-bold leading-none tracking-tighter text-transparent md:text-7xl"
+        className="pointer-events-none pt-10 z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent md:text-6xl"
       >
-        Lebih Dari Sekadar Website. <br />
-        Ini Solusi Bisnis Anda.
+        Transformasi Digital
+        <br />
+        untuk Bisnis Anda
       </motion.h1>
 
       {/* 3. Deskripsi yang lebih spesifik */}
@@ -27,9 +28,9 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="z-10 mt-6 max-w-[600px] text-center text-muted-foreground md:text-xl px-6"
       >
-        Saya membantu bisnis Anda mengatasi hambatan operasional, meningkatkan
-        efisiensi, dan menjangkau pasar yang lebih luas melalui pengembangan web
-        yang strategis.
+        Miliki website profesional dan sistem manajemen yang terintegrasi untuk
+        mendigitalkan operasional bisnis Anda agar lebih efisien, efektif, dan
+        siap tumbuh.
       </motion.p>
 
       {/* 4. CTA Buttons */}
@@ -40,16 +41,16 @@ export default function Hero() {
         className="z-10 mt-10 flex flex-col sm:flex-row items-center gap-4"
       >
         <Link
-          href="#projects"
+          href="#solution"
           className="group inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground transition-all hover:ring-4 hover:ring-primary/20 active:scale-95"
         >
-          Konsultasi Gratis
+          Lihat Solusi
           <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
 
-        <Link href="#contact">
+        <Link href="#cta">
           <ShimmerButton className="cursor-pointer h-12 items-center justify-center rounded-full border border-border dark:bg-background bg-background px-8 text-sm font-semibold transition-all hover:bg-muted active:scale-95">
-            Diskusikan Kebutuhan Anda
+            Hubungi Kami
           </ShimmerButton>
         </Link>
       </motion.div>

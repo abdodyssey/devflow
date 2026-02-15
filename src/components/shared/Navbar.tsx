@@ -18,7 +18,7 @@ const navItems = [
   { name: "Solutions", href: "#solution" },
   { name: "Process", href: "#how-i-work" },
   { name: "Clients", href: "#who-i-help" },
-  { name: "Why Me", href: "#why-me" },
+  { name: "Why Us", href: "#why-me" },
 ];
 
 export default function Navbar() {
@@ -126,7 +126,7 @@ export default function Navbar() {
                       <SheetClose asChild>
                         <Link
                           /* CHANGE THIS NUMBER: Ganti dengan nomor WhatsApp yang benar */
-                          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konsultasi%20tentang%20project%20saya"
+                          href="https://wa.me/6285840858761?text=Halo%20saya%20ingin%20konsultasi%20tentang%20project%20saya"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="mt-4 inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground w-full"

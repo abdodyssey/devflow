@@ -5,37 +5,37 @@ import { Search, Target, PenTool, Rocket, BarChart3 } from "lucide-react";
 
 const steps = [
   {
-    title: "Diagnosa Masalah Bisnis",
+    title: "Diskusi & Pemahaman Masalah",
     description:
-      "Saya tidak langsung coding. Saya mulai dengan memahami alur kerja Anda dan mencari di mana letak inefisiensinya.",
+      "Kita mulai dengan diskusi mendalam. Kami perlu mengerti di mana letak kebocoran efisiensi bisnis Anda sebelum menawarkan solusi.",
     icon: Search,
     color: "bg-blue-500",
   },
   {
-    title: "Strategi & Solusi Digital",
+    title: "Perancangan Strategi",
     description:
-      "Merancang arsitektur sistem yang tidak hanya menyelesaikan masalah hari ini, tapi juga relevan untuk masa depan.",
+      "Kami merancang sistem yang tidak hanya canggih, tapi juga mudah digunakan oleh tim Anda. Solusi yang pas, bukan yang paling mahal.",
     icon: Target,
     color: "bg-red-500",
   },
   {
-    title: "Pengembangan Presisi",
+    title: "Eksekusi & Pengembangan",
     description:
-      "Membangun website/aplikasi dengan teknologi modern yang cepat, aman, dan mudah digunakan oleh tim Anda.",
+      "Proses pengerjaan dilakukan dengan terstruktur dan teliti. Fokus pada keamanan data, kecepatan akses, dan kestabilan sistem.",
     icon: PenTool,
     color: "bg-yellow-500",
   },
   {
-    title: "Implementasi & Adaptasi",
+    title: "Pelatihan & Serah Terima",
     description:
-      "Sistem selesai bukan berarti tugas selesai. Saya memastikan tim Anda bisa menggunakan sistem baru ini dengan lancar.",
+      "Sistem baru tidak akan berguna jika sulit dipakai. Kami akan melatih tim Anda sampai mereka benar-benar nyaman menggunakannya.",
     icon: Rocket,
     color: "bg-green-500",
   },
   {
-    title: "Optimasi Berkelanjutan",
+    title: "Pendampingan Jangka Panjang",
     description:
-      "Bisnis Anda tumbuh, teknologi juga harus mengikuti. Saya siap melakukan iterasi fitur sesuai kebutuhan pasar.",
+      "Bisnis Anda terus bergerak, begitupun teknologinya. Kami siap membantu update dan maintenance agar sistem selalu optimal.",
     icon: BarChart3,
     color: "bg-purple-500",
   },
@@ -52,11 +52,11 @@ export default function HowIWork() {
             viewport={{ once: true }}
             className="text-4xl font-bold tracking-tighter sm:text-5xl"
           >
-            How I <span className="text-neutral-400">Work</span>
+            Alur <span className="text-neutral-400">Kerja Sama</span>
           </motion.h2>
           <p className="text-muted-foreground text-lg">
-            Alur kerja yang terstruktur untuk memastikan setiap solusi
-            memberikan dampak maksimal.
+            Proses yang terstruktur untuk memastikan setiap solusi digital
+            memberikan hasil nyata bagi bisnis Anda.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function HowIWork() {
               <div className="pt-2 space-y-2">
                 <div className="flex items-center gap-3">
                   <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">
-                    Step 0{idx + 1}
+                    Tahap 0{idx + 1}
                   </span>
                   <div className="h-px w-8 bg-neutral-200 dark:bg-neutral-800" />
                 </div>
