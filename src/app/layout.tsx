@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import CustomCursor from "@/components/ui/custom-cursor";
-import ScrollToTop from "@/components/ui/scroll-to-top";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -31,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-primary/20 selection:text-primary`}
       >
         <ThemeProvider
           attribute="class"
@@ -42,10 +39,7 @@ export default function RootLayout({
         >
           <CustomCursor />
           <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex flex-1 flex-col px-6 pt-0 pb-12 md:px-12 lg:px-24">
-              {children}
-            </main>
+            {children}
             <Toaster
               position="top-center"
               richColors
@@ -61,8 +55,6 @@ export default function RootLayout({
                 },
               }}
             />
-            <Footer />
-            <ScrollToTop />
           </div>
         </ThemeProvider>
       </body>
