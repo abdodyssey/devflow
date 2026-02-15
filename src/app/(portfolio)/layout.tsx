@@ -4,7 +4,7 @@ export default function PortfolioLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-[#141b1e] text-[#dadada] relative selection:bg-[#e57474]/30 selection:text-white font-sans">
+    <div className="dark min-h-screen bg-[#141b1e] text-[#dadada] relative selection:bg-[#e57474]/30 selection:text-white font-sans">
       {/* 
           Everblush Engineering Lab Layout:
           - Deep warm dark background (#141b1e)

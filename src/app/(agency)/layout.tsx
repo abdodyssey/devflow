@@ -8,13 +8,11 @@ export default function AgencyLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1a] selection:bg-blue-600/10 selection:text-blue-600">
       <Navbar />
-      <main className="flex flex-1 flex-col px-6 pt-0 pb-12 md:px-12 lg:px-24">
-        {children}
-      </main>
+      <main className="flex flex-1 flex-col pt-0 pb-24">{children}</main>
       <Footer />
       <ScrollToTop />
-    </>
+    </div>
   );
 }

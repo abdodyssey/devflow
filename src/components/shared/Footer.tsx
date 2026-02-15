@@ -1,26 +1,37 @@
 import Link from "next/link";
-import { Github, Instagram, Mail } from "lucide-react"; // Ikon dari Lucide
+import { Github, Instagram, Mail } from "lucide-react";
+
+/**
+ * Premium Footer
+ * - Simple & Clean
+ * - Light Minimal Theme
+ */
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full max-w-4xl mx-auto border-t border-border/40 bg-background ">
-      <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-        {/* Bagian Kiri: Copyright & Brand */}
-        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © {currentYear}{" "}
-            <span className="font-bold text-foreground">devflow.</span> All
-            rights reserved.
+    <footer className="w-full bg-[#fafafa] pt-20 pb-10 px-6">
+      <div className="max-w-7xl mx-auto border-t border-slate-200/60 pt-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Left Side: Brand & Copyright */}
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <Link
+            href="/"
+            className="text-2xl font-black tracking-tighter text-[#0f172a]"
+          >
+            devflow<span className="text-blue-600">.</span>
+          </Link>
+          <p className="text-slate-400 text-sm font-medium tracking-tight">
+            Handcrafted Digital Solutions © {currentYear}
           </p>
         </div>
 
-        {/* Bagian Kanan: Social Links */}
-        <div className="flex items-center gap-6">
+        {/* Right Side: Social links */}
+        <div className="flex items-center gap-8">
           <Link
-            href="https://www.instagram.com/devflow__"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            href="https://www.instagram.com/devflow___"
+            target="_blank"
+            className="text-slate-400 hover:text-blue-600 transition-colors duration-300"
           >
             <Instagram className="h-5 w-5" />
             <span className="sr-only">Instagram</span>
@@ -29,15 +40,14 @@ export default function Footer() {
             href="https://github.com/abdodyssey"
             target="_blank"
             rel="noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-slate-400 hover:text-blue-600 transition-colors duration-300"
           >
             <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </Link>
-
           <Link
             href="mailto:devflow99@gmail.com"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-slate-400 hover:text-blue-600 transition-colors duration-300"
           >
             <Mail className="h-5 w-5" />
             <span className="sr-only">Email</span>

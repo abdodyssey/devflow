@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Store, LineChart, Users } from "lucide-react";
-import { MagicCard } from "../ui/magic-card";
+
+/**
+ * Premium Who I Help Section
+ * - Light Minimal Design
+ * - Trusted feel
+ * - Generous spacing
+ */
 
 const targets = [
   {
@@ -10,76 +16,68 @@ const targets = [
     description:
       "Anda yang ingin bisnisnya 'naik kelas'. Punya website resmi agar lebih dipercaya, serta sistem operasional yang tidak lagi manual.",
     icon: Store,
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
   },
   {
     title: "Perusahaan Berkembang",
     description:
       "Bisnis yang transaksinya makin ramai. Anda butuh sistem inventory, keuangan, atau manajemen tim yang lebih serius dan terintegrasi.",
     icon: LineChart,
-    color: "text-green-500",
-    bg: "bg-green-500/10",
   },
   {
     title: "Organisasi & Profesional",
     description:
       "Institusi, komunitas, atau konsultan yang membutuhkan platform digital representatif untuk menjangkau audiens dan melayani anggota.",
     icon: Users,
-    color: "text-orange-500",
-    bg: "bg-orange-500/10",
   },
 ];
 
 export default function WhoIHelp() {
   return (
-    <section
-      id="who-i-help"
-      className="py-32 px-6 bg-neutral-50/50 dark:bg-neutral-900/10"
-    >
+    <section id="who-i-help" className="py-32 px-6 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+        <div className="text-center mb-24 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-4xl font-extrabold tracking-tight text-[#0f172a] sm:text-5xl lg:text-5xl">
+              Siapa yang Cocok <br />
+              <span className="text-blue-600">Kami Bantu?</span>
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold tracking-tighter sm:text-5xl"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
           >
-            Siapa yang Cocok{" "}
-            <span className="text-neutral-400">Kami Bantu?</span>
-          </motion.h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Layanan kami dirancang khusus untuk Anda yang serius ingin membenahi
             fondasi digital bisnis, dari skala kecil hingga menengah.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {targets.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="h-full"
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 group"
             >
-              <MagicCard
-                className="h-full rounded-2xl"
-                gradientColor="rgba(59, 130, 246, 0.15)"
-              >
-                <div className="p-8 flex flex-col items-start h-full">
-                  <div
-                    className={`mb-6 p-3 rounded-xl ${item.bg} flex items-center justify-center`}
-                  >
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </MagicCard>
+              <div className="mb-8 flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <item.icon className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#0f172a] mb-4">
+                {item.title}
+              </h3>
+              <p className="text-slate-500 text-base leading-relaxed">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

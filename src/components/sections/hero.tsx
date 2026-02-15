@@ -2,64 +2,68 @@
 
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { RetroGrid } from "../ui/retro-grid";
 import { motion } from "framer-motion";
-import { ShimmerButton } from "../ui/shimmer-button";
 
 export default function Hero() {
   return (
-    <div className="relative flex min-h-screen w-full max-w-7xl mx-auto flex-col items-center justify-center overflow-hidden bg-background">
-      {/* 2. Teks Utama dengan Animasi */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="pointer-events-none pt-10 z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent md:text-6xl"
-      >
-        Transformasi Digital
-        <br />
-        untuk Bisnis Anda
-      </motion.h1>
+    <section className="relative w-full overflow-hidden bg-transparent pt-28 pb-20">
+      {/* Background Decorative Element - Full Width background area */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-50/50 rounded-full blur-3xl -z-10" />
 
-      {/* 3. Deskripsi yang lebih spesifik */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="z-10 mt-6 max-w-[600px] text-center text-muted-foreground md:text-xl px-6"
-      >
-        Miliki website profesional dan sistem manajemen yang terintegrasi untuk
-        mendigitalkan operasional bisnis Anda agar lebih efisien, efektif, dan
-        siap tumbuh.
-      </motion.p>
-
-      {/* 4. CTA Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="z-10 mt-10 flex flex-col sm:flex-row items-center gap-4"
-      >
-        <Link
-          href="#solution"
-          className="group inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground transition-all hover:ring-4 hover:ring-primary/20 active:scale-95"
+      <div className="relative flex min-h-[70vh] w-full max-w-7xl mx-auto flex-col items-center justify-center px-6 text-center">
+        {/* 2. Teks Utama dengan Animasi */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="z-10 space-y-8"
         >
-          Lihat Solusi
-          <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Link>
+          <div className="inline-block px-4 py-1.5 mb-2 rounded-full border border-blue-100 bg-blue-50/50 text-blue-700 text-xs font-semibold tracking-wider uppercase">
+            Digital Agency Specialist
+          </div>
+          <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-[#0f172a] md:text-7xl lg:text-8xl px-4">
+            Transformasi Digital
+            <br />
+            <span className="text-blue-600">untuk Bisnis Anda</span>
+          </h1>
+        </motion.div>
 
-        <Link href="#cta">
-          <ShimmerButton className="cursor-pointer h-12 items-center justify-center rounded-full border border-border dark:bg-background bg-background px-8 text-sm font-semibold transition-all hover:bg-muted active:scale-95">
+        {/* 3. Deskripsi yang lebih spesifik */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="z-10 mt-10 max-w-[750px] text-slate-600 text-lg md:text-xl leading-relaxed px-6"
+        >
+          Miliki website profesional dan sistem manajemen yang terintegrasi
+          untuk mendigitalkan operasional bisnis Anda agar lebih efisien,
+          efektif, dan siap tumbuh di era digital masa kini.
+        </motion.p>
+
+        {/* 4. CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="z-10 mt-14 flex flex-col sm:flex-row items-center gap-6"
+        >
+          <Link
+            href="#solution"
+            className="group inline-flex h-16 items-center justify-center rounded-full bg-[#0f172a] px-12 text-lg font-bold text-white transition-all hover:bg-blue-700 active:scale-95 shadow-xl shadow-blue-900/10"
+          >
+            Lihat Solusi
+            <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Link>
+
+          <Link
+            href="https://wa.me/6285840858761"
+            target="_blank"
+            className="inline-flex h-16 items-center justify-center rounded-full border border-slate-200 bg-white px-12 text-lg font-bold text-[#0f172a] transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95 shadow-sm"
+          >
             Hubungi Kami
-          </ShimmerButton>
-        </Link>
-      </motion.div>
-
-      {/* Efek Background */}
-      <RetroGrid className="opacity-50" />
-
-      {/* Overlay Gradient (Bikin transisi ke section bawah lebih smooth) */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent z-10" />
-    </div>
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 }

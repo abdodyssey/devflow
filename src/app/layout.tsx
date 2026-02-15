@@ -32,10 +32,9 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
-          forcedTheme="dark"
         >
           <CustomCursor />
           <div className="relative flex min-h-screen flex-col">
