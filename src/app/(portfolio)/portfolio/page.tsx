@@ -5,10 +5,16 @@ import EngineeringCaseStudies from "@/components/sections/engineering/case-studi
 import EngineeringWorkLog from "@/components/sections/engineering/work-log";
 import EngineeringContact from "@/components/sections/engineering/contact";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import PixelBackground from "@/components/ui/pixel-background";
+import AudioStation from "@/components/ui/audio-station";
+import EngineeringLab from "@/components/ui/engineering-lab";
 
 export default function PortfolioPage() {
   return (
     <main className="relative">
+      <EngineeringLab />
+      <AudioStation />
+      <PixelBackground />
       {/* Subtle Low-Opacity Grid Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.02] bg-size-[40px_40px] bg-[linear-gradient(to_right,#e57474_1px,transparent_1px),linear-gradient(to_bottom,#e57474_1px,transparent_1px)]" />
 

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const logs = [
+const groups = [
   {
     role: "Senior Frontend Lead",
     organization: "DevFlow Agency",
@@ -40,11 +40,15 @@ export default function EngineeringWorkLog() {
               [ work.history ]
             </h2>
           </div>
-          <div className="h-px w-full bg-[#232a2d]" />
+          <div className="flex gap-1.5 h-0.5">
+            <div className="w-4 bg-[#e57474]" />
+            <div className="w-1 bg-[#e57474] opacity-50" />
+            <div className="w-0.5 bg-[#e57474] opacity-30" />
+          </div>
         </motion.div>
 
-        <div className="md:col-span-3 space-y-12">
-          {logs.map((log, idx) => (
+        <div className="md:col-span-3 space-y-12 font-mono">
+          {groups.map((log, idx) => (
             <motion.div
               key={log.role + idx}
               initial={{ opacity: 0 }}
@@ -52,27 +56,27 @@ export default function EngineeringWorkLog() {
               viewport={{ once: true }}
               className="relative pl-10 border-l border-[#232a2d] group py-2"
             >
-              {/* Timeline Indicator */}
-              <div className="absolute top-0 left-0 -translate-x-1/2 w-4 h-4 border-2 border-[#232a2d] bg-[#141b1e] group-hover:border-[#e57474] transition-colors flex items-center justify-center">
-                <div className="w-1 h-1 bg-[#e57474] opacity-40 group-hover:opacity-100 transition-opacity" />
+              {/* Pixel Timeline Indicator */}
+              <div className="absolute top-0 left-0 -translate-x-1/2 w-4 h-4 border border-[#232a2d] bg-[#141b1e] group-hover:border-[#e57474] transition-colors flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-[#e57474] opacity-40 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
                   <div>
-                    <h3 className="text-[#dadada] font-bold text-xl">
+                    <h3 className="text-[#dadada] font-bold text-xl font-sans">
                       {log.role}
                     </h3>
-                    <p className="text-sm text-[#e57474]/70 font-mono tracking-tight font-bold">
+                    <p className="text-sm text-[#e57474]/70 tracking-tight font-bold">
                       {log.organization}
                     </p>
                   </div>
-                  <span className="text-[10px] font-mono text-[#b3b9b8] bg-[#232a2d]/50 px-4 py-1.5 rounded-sm border border-[#232a2d] uppercase tracking-widest whitespace-nowrap">
+                  <span className="text-[10px] text-[#b3b9b8] bg-[#232a2d]/50 px-4 py-1.5 rounded-sm border border-[#232a2d] uppercase tracking-widest whitespace-nowrap">
                     {log.period}
                   </span>
                 </div>
 
-                <div className="font-mono text-[10px] text-[#b3b9b8] opacity-30 uppercase tracking-[0.2em]">
+                <div className="text-[10px] text-[#b3b9b8]/40 uppercase tracking-[0.2em]">
                   {"// core_contributions"}
                 </div>
 
@@ -82,10 +86,10 @@ export default function EngineeringWorkLog() {
                       key={i}
                       className="text-[#b3b9b8] text-sm leading-relaxed flex items-start gap-4"
                     >
-                      <span className="mt-2 text-[#e57474] font-bold text-xs">
-                        »
+                      <span className="mt-2 text-[#e57474] font-bold text-xs select-none">
+                        #
                       </span>
-                      {item}
+                      <span className="font-sans">{item}</span>
                     </li>
                   ))}
                 </ul>

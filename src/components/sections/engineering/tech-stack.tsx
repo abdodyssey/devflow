@@ -21,6 +21,13 @@ const groups = [
   },
 ];
 
+// Helper for pixel folder icon
+const PixelFolder = () => (
+  <div className="w-3 h-2.5 bg-[#e57474] relative mr-2">
+    <div className="absolute -top-1 left-0 w-1.5 h-1 bg-[#e57474]" />
+  </div>
+);
+
 export default function EngineeringTechStack() {
   return (
     <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto">
@@ -31,12 +38,17 @@ export default function EngineeringTechStack() {
           viewport={{ once: true }}
           className="md:col-span-1"
         >
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-1.5 h-1.5 bg-[#e57474]" />
             <h2 className="font-mono text-sm tracking-tight text-[#e57474] font-bold">
               [ tech.dependencies ]
             </h2>
           </div>
-          <div className="h-px w-full bg-[#232a2d]" />
+          <div className="flex gap-1.5 h-0.5">
+            <div className="w-4 bg-[#e57474]" />
+            <div className="w-1 bg-[#e57474] opacity-50" />
+            <div className="w-0.5 bg-[#e57474] opacity-30" />
+          </div>
         </motion.div>
 
         <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-12">
@@ -47,23 +59,13 @@ export default function EngineeringTechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="font-mono relative group overflow-hidden"
+              className="font-mono"
             >
-              {/* Scanline Animation */}
-              <motion.div
-                animate={{ top: ["-10%", "110%"] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: idx * 1.5,
-                }}
-                className="absolute inset-x-0 h-px bg-[#e57474]/10 z-10 pointer-events-none"
-              />
-
-              <div className="text-[#e57474] mb-2 font-bold flex items-center gap-2">
-                <span className="text-[#f2cecf] opacity-40">/</span>
-                {group.title}
+              <div className="text-[#e57474] mb-3 font-bold flex items-center group">
+                <PixelFolder />
+                <span className="group-hover:translate-x-1 transition-transform">
+                  {group.title}/
+                </span>
               </div>
               <div className="space-y-1 pl-1">
                 {group.items.map((item, i) => {
@@ -71,9 +73,9 @@ export default function EngineeringTechStack() {
                   return (
                     <div
                       key={item}
-                      className="text-[#b3b9b8] text-sm flex items-center group"
+                      className="text-[#b3b9b8] text-sm flex items-center group hover:bg-[#1c2326] px-2 py-0.5 rounded-sm transition-colors"
                     >
-                      <span className="text-[#232a2d] font-bold mr-2">
+                      <span className="text-[#232a2d] font-bold mr-2 select-none">
                         {isLast ? "└─" : "├─"}
                       </span>
                       <span className="group-hover:text-[#dadada] transition-colors">
