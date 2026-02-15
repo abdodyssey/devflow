@@ -5,37 +5,37 @@ import { Search, Target, PenTool, Rocket, BarChart3 } from "lucide-react";
 
 const steps = [
   {
-    title: "Memahami Bisnis Anda",
+    title: "Diagnosa Masalah Bisnis",
     description:
-      "Saya mempelajari proses dan tantangan bisnis secara menyeluruh untuk mendapatkan gambaran yang utuh.",
+      "Saya tidak langsung coding. Saya mulai dengan memahami alur kerja Anda dan mencari di mana letak inefisiensinya.",
     icon: Search,
     color: "bg-blue-500",
   },
   {
-    title: "Menentukan Masalah Utama",
+    title: "Strategi & Solusi Digital",
     description:
-      "Fokus pada masalah yang paling berdampak signifikan terhadap operasional dan efisiensi bisnis.",
+      "Merancang arsitektur sistem yang tidak hanya menyelesaikan masalah hari ini, tapi juga relevan untuk masa depan.",
     icon: Target,
     color: "bg-red-500",
   },
   {
-    title: "Merancang Solusi yang Tepat",
+    title: "Pengembangan Presisi",
     description:
-      "Solusi teknis dirancang dan disesuaikan secara spesifik dengan kebutuhan nyata serta tujuan bisnis Anda.",
+      "Membangun website/aplikasi dengan teknologi modern yang cepat, aman, dan mudah digunakan oleh tim Anda.",
     icon: PenTool,
     color: "bg-yellow-500",
   },
   {
-    title: "Implementasi & Pendampingan",
+    title: "Implementasi & Adaptasi",
     description:
-      "Saya memastikan solusi tidak hanya diinstal, tapi juga dapat digunakan dengan baik oleh tim Anda.",
+      "Sistem selesai bukan berarti tugas selesai. Saya memastikan tim Anda bisa menggunakan sistem baru ini dengan lancar.",
     icon: Rocket,
     color: "bg-green-500",
   },
   {
-    title: "Evaluasi & Pengembangan",
+    title: "Optimasi Berkelanjutan",
     description:
-      "Solusi siap disesuaikan dan dikembangkan lebih lanjut seiring dengan pertumbuhan skala bisnis.",
+      "Bisnis Anda tumbuh, teknologi juga harus mengikuti. Saya siap melakukan iterasi fitur sesuai kebutuhan pasar.",
     icon: BarChart3,
     color: "bg-purple-500",
   },
@@ -52,7 +52,7 @@ export default function HowIWork() {
             viewport={{ once: true }}
             className="text-4xl font-bold tracking-tighter sm:text-5xl"
           >
-            Cara Saya <span className="text-neutral-400">Bekerja</span>
+            How I <span className="text-neutral-400">Work</span>
           </motion.h2>
           <p className="text-muted-foreground text-lg">
             Alur kerja yang terstruktur untuk memastikan setiap solusi
@@ -74,7 +74,7 @@ export default function HowIWork() {
               className="relative flex flex-col sm:flex-row gap-8 items-start"
             >
               <div
-                className={`z-10 flex flex-shrink-0 items-center justify-center w-14 h-14 rounded-2xl ${step.color} text-white shadow-lg`}
+                className={`z-10 flex flex-shrink-0 items-center justify-center w-14 h-14 rounded-xl ${step.color} text-white shadow-lg`}
               >
                 <step.icon className="w-7 h-7" />
               </div>

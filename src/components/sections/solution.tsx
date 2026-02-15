@@ -5,27 +5,27 @@ import { Sparkles, Zap, TrendingUp, ShieldCheck } from "lucide-react";
 
 const solutions = [
   {
-    title: "Sederhanakan Proses Kerja",
+    title: "Sederhanakan Operasional Bisnis",
     description:
-      "Menyederhanakan alur kerja yang kompleks agar operasional lebih efektif dan mudah dikelola.",
+      "Ubah alur kerja manual yang rumit menjadi sistem web yang efisien, terstruktur, dan mudah dikelola.",
     icon: <Sparkles className="h-6 w-6 text-blue-500" />,
   },
   {
-    title: "Otomatisasi Cerdas",
+    title: "Otomatisasi Tugas Repetitif",
     description:
-      "Mengurangi tugas repetitif melalui sistem otomatis untuk menghemat waktu dan biaya operasional.",
+      "Hemat waktu dan biaya dengan mengotomatisasi tugas berulang, sehingga tim Anda bisa fokus pada hal strategis.",
     icon: <Zap className="h-6 w-6 text-yellow-500" />,
   },
   {
-    title: "Sistem Scalable",
+    title: "Sistem yang Siap Tumbuh",
     description:
-      "Membangun pondasi digital yang mudah digunakan dan siap berkembang seiring pertumbuhan bisnis Anda.",
+      "Bangun pondasi digital yang tidak hanya bagus sekarang, tapi siap menampung lonjakan bisnis Anda di masa depan.",
     icon: <TrendingUp className="h-6 w-6 text-green-500" />,
   },
   {
-    title: "Solusi Relevan",
+    title: "Solusi Tepat Guna",
     description:
-      "Memberikan teknologi yang benar-benar dibutuhkan bisnis, bukan sekadar mengikuti tren sesaat.",
+      "Bukan sekadar fitur canggih, tapi fitur yang benar-benar menyelesaikan masalah spesifik dalam bisnis Anda.",
     icon: <ShieldCheck className="h-6 w-6 text-purple-500" />,
   },
 ];
@@ -45,8 +45,7 @@ export default function SolutionSection() {
             transition={{ duration: 0.5 }}
             className="text-4xl font-bold tracking-tighter sm:text-5xl"
           >
-            Pendekatan Solusi yang{" "}
-            <span className="text-neutral-400">Saya Tawarkan</span>
+            The Solutions <span className="text-neutral-400">I Offer</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -68,9 +67,9 @@ export default function SolutionSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+              className="group p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="mb-6 inline-flex p-3 rounded-2xl bg-neutral-100 dark:bg-neutral-900 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
+              <div className="mb-6 inline-flex p-3 rounded-xl bg-neutral-100 dark:bg-neutral-900 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{item.title}</h3>

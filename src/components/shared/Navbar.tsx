@@ -10,16 +10,15 @@ import {
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ModeToggle } from "../mode-toggle";
+
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Problem", href: "#problem" },
-  { name: "Solution", href: "#solution" },
+  { name: "Solutions", href: "#solution" },
   { name: "Process", href: "#how-i-work" },
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
+  { name: "Clients", href: "#who-i-help" },
+  { name: "Why Me", href: "#why-me" },
 ];
 
 export default function Navbar() {
@@ -29,7 +28,7 @@ export default function Navbar() {
 
   return (
     /* Wrapper untuk posisi floating di tengah atas */
-    <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
+    <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none w-full md:w-3xl mx-auto">
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -45,9 +44,11 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2"
             >
-              <img
+              <Image
                 src="/images/logo-devflow.png"
                 alt="DevFlow Logo"
+                width={32}
+                height={32}
                 className="h-8 w-auto mix-blend-multiply dark:mix-blend-screen dark:invert"
               />
               <span className="text-xl font-bold tracking-tighter">
@@ -75,28 +76,12 @@ export default function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    href="#contact"
-                    className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-medium"
-                  >
-                    Let&apos;s Talk
-                  </Link>
-                </motion.div>
               </>
             )}
-            <ModeToggle />
           </div>
 
           {/* Mobile Menu (Visible only on Mobile) */}
           <div className="flex md:hidden items-center gap-2">
-            <ModeToggle />
             {!isProjectPage && (
               <Sheet>
                 <SheetTrigger asChild>
@@ -140,7 +125,10 @@ export default function Navbar() {
                     >
                       <SheetClose asChild>
                         <Link
-                          href="#contact"
+                          /* CHANGE THIS NUMBER: Ganti dengan nomor WhatsApp yang benar */
+                          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konsultasi%20tentang%20project%20saya"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="mt-4 inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground w-full"
                         >
                           Let&apos;s Talk

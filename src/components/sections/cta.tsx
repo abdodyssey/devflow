@@ -46,7 +46,13 @@ export default function CTASection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link href="#contact" className="w-full sm:w-auto">
+          <Link
+            /* CHANGE THIS NUMBER: Ganti dengan nomor WhatsApp yang benar */
+            href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konsultasi%20tentang%20project%20saya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
             <ShimmerButton className="w-full sm:w-auto h-14 px-10 rounded-full shadow-2xl transition-transform hover:scale-105 active:scale-95">
               <span className="flex items-center gap-2 text-lg font-bold">
                 <MessageCircle className="w-5 h-5" />

@@ -12,37 +12,37 @@ import {
 
 const advantages = [
   {
-    title: "Komunikasi Langsung",
+    title: "Mindset Bisnis, Bukan Cuma Kode",
     description:
-      "Diskusi langsung dengan saya tanpa perantara sales atau PM. Pesan Anda sampai tepat sasaran.",
-    icon: MessageSquare,
+      "Saya mengerti bahwa kode hanyalah alat. Tujuan akhirnya adalah profit, efisiensi, dan pertumbuhan bisnis Anda.",
+    icon: Target,
     color: "text-blue-500",
   },
   {
-    title: "Solusi Terpersonalisasi",
+    title: "Komunikasi Tanpa Perantara",
     description:
-      "Bukan paket massal. Setiap sistem dirancang khusus menyesuaikan kondisi dan tujuan bisnis Anda.",
-    icon: Settings2,
+      "Anda bicara langsung dengan pembuatnya. Tidak ada miskomunikasi lewat account manager atau sales.",
+    icon: MessageSquare,
     color: "text-purple-500",
   },
   {
-    title: "Fleksibel & Responsif",
+    title: "Biaya Lebih Efisien",
     description:
-      "Sebagai solo agency, saya bisa bergerak lebih cepat dan menyesuaikan perubahan dengan instan.",
+      "Tanpa overhead agensi besar, Anda mendapatkan kualitas premium dengan investasi yang lebih masuk akal.",
     icon: Zap,
     color: "text-yellow-500",
   },
   {
-    title: "Fokus Hasil & Efisiensi",
+    title: "Solusi Custom & Fleksibel",
     description:
-      "Orientasi saya adalah bagaimana teknologi yang saya bangun benar-benar menghemat waktu dan biaya Anda.",
-    icon: Target,
+      "Tidak ada template kaku. Sistem dibangun mengikuti cara kerja bisnis Anda, bukan sebaliknya.",
+    icon: Settings2,
     color: "text-red-500",
   },
   {
-    title: "Pendampingan Penuh",
+    title: "Partner Jangka Panjang",
     description:
-      "Saya menemani prosesnya dari tahap ide, pengembangan, hingga solusi benar-benar berjalan sempurna.",
+      "Saya tidak lari setelah project selesai. Saya siap menjadi partner teknis yang menjaga sistem tetap berjalan optimal.",
     icon: Handshake,
     color: "text-green-500",
   },
@@ -77,8 +77,8 @@ export default function WhyWorkWithMe() {
               viewport={{ once: true }}
               className="text-4xl font-bold tracking-tighter sm:text-5xl"
             >
-              Kenapa Bekerja <br />
-              <span className="text-neutral-400">Dengan Saya?</span>
+              Why Work <br />
+              <span className="text-neutral-400">With Me?</span>
             </motion.h2>
 
             <motion.p

@@ -6,28 +6,28 @@ import { MagicCard } from "../ui/magic-card";
 
 const targets = [
   {
-    title: "Pemilik UMKM",
+    title: "Pemilik Bisnis & UMKM",
     description:
-      "Membantu digitalisasi usaha kecil untuk menjangkau pasar lebih luas dan manajemen yang lebih rapi.",
-    icon: <Store className="w-10 h-10 text-blue-500" />,
+      "Ingin beralih ke digital, menjangkau pasar lebih luas, dan mengelola pesanan dengan lebih teratur.",
+    icon: Store,
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
   },
   {
-    title: "Bisnis yang Sedang Berkembang",
+    title: "Perusahaan Berkembang",
     description:
-      "Menyediakan sistem yang siap diskalakan seiring dengan bertambahnya jumlah pelanggan dan transaksi.",
-    icon: <LineChart className="w-10 h-10 text-green-500" />,
+      "Membutuhkan sistem yang bisa menangani lonjakan transaksi dan pelanggan tanpa menambah beban kerja manual tim.",
+    icon: LineChart,
+    color: "text-green-500",
+    bg: "bg-green-500/10",
   },
   {
-    title: "Perusahaan & Sistemasi",
+    title: "Startups & Visioner",
     description:
-      "Merapikan alur kerja manual yang berantakan menjadi sistem digital yang terintegrasi dan efisien.",
-    icon: <Workflow className="w-10 h-10 text-purple-500" />,
-  },
-  {
-    title: "Tim Kecil & Individu",
-    description:
-      "Solusi tepat guna untuk tim kecil yang membutuhkan tools spesifik tanpa biaya operasional yang besar.",
-    icon: <Users className="w-10 h-10 text-orange-500" />,
+      "Membutuhkan MVP atau prototipe fungsional untuk menguji ide bisnis dengan cepat dan efisien.",
+    icon: Users,
+    color: "text-orange-500",
+    bg: "bg-orange-500/10",
   },
 ];
 
@@ -45,8 +45,7 @@ export default function WhoIHelp() {
             viewport={{ once: true }}
             className="text-4xl font-bold tracking-tighter sm:text-5xl"
           >
-            Siapa yang Bisa{" "}
-            <span className="text-neutral-400">Saya Bantu?</span>
+            Who Can I <span className="text-neutral-400">Help?</span>
           </motion.h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Solusi yang saya tawarkan dirancang khusus untuk berbagai skala dan
@@ -54,7 +53,7 @@ export default function WhoIHelp() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
           {targets.map((item, idx) => (
             <motion.div
               key={idx}
@@ -62,18 +61,23 @@ export default function WhoIHelp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="h-full"
             >
               <MagicCard
-                className="p-8 h-full flex flex-col items-center text-center space-y-4"
+                className="h-full rounded-2xl"
                 gradientColor="rgba(59, 130, 246, 0.15)"
               >
-                <div className="mb-2 p-4 rounded-full bg-neutral-100 dark:bg-neutral-900 ring-1 ring-neutral-200 dark:ring-neutral-800">
-                  {item.icon}
+                <div className="p-8 flex flex-col items-start h-full">
+                  <div
+                    className={`mb-6 p-3 rounded-xl ${item.bg} flex items-center justify-center`}
+                  >
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
               </MagicCard>
             </motion.div>
           ))}

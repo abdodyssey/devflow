@@ -33,7 +33,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+          forcedTheme="dark"
+        >
           <CustomCursor />
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
@@ -48,10 +54,10 @@ export default function RootLayout({
               toastOptions={{
                 className: "my-custom-toast", // ID untuk CSS di atas
                 style: {
-                  borderRadius: '12px',
-                  background: 'var(--background)',
-                  color: 'var(--foreground)',
-                  border: '1px solid var(--border)',
+                  borderRadius: "12px",
+                  background: "var(--background)",
+                  color: "var(--foreground)",
+                  border: "1px solid var(--border)",
                 },
               }}
             />
@@ -59,7 +65,6 @@ export default function RootLayout({
             <ScrollToTop />
           </div>
         </ThemeProvider>
-
       </body>
     </html>
   );

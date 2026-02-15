@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { RetroGrid } from "../ui/retro-grid";
 import { motion } from "framer-motion";
@@ -16,8 +16,8 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="pointer-events-none pt-10 z-10 whitespace-pre-wrap bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-center text-5xl font-bold leading-none tracking-tighter text-transparent md:text-7xl"
       >
-        Solusi Digital untuk <br />
-        Masalah Bisnis Nyata
+        Lebih Dari Sekadar Website. <br />
+        Ini Solusi Bisnis Anda.
       </motion.h1>
 
       {/* 3. Deskripsi yang lebih spesifik */}
@@ -27,9 +27,9 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="z-10 mt-6 max-w-[600px] text-center text-muted-foreground md:text-xl px-6"
       >
-        Kami membantu bisnis kecil, menengah, hingga besar menyelesaikan
-        tantangan operasional dan digital melalui solusi yang praktis, efisien,
-        dan berkelanjutan.
+        Saya membantu bisnis Anda mengatasi hambatan operasional, meningkatkan
+        efisiensi, dan menjangkau pasar yang lebih luas melalui pengembangan web
+        yang strategis.
       </motion.p>
 
       {/* 4. CTA Buttons */}
