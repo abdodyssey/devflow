@@ -185,17 +185,17 @@ export default function AudioStation() {
       <button
         onClick={togglePlayback}
         disabled={hasError}
-        className={`group relative flex items-center justify-center w-10 h-10 border border-[#232a2d] bg-[#141b1e]/90 hover:border-[#e57474]/60 transition-all rounded-sm active:scale-95 ${hasError ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
+        className={`group relative flex items-center justify-center w-10 h-10 border border-border bg-background/90 backdrop-blur-md hover:border-accent transition-all rounded-full active:scale-95 shadow-lg ${hasError ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
       >
-        <div className="absolute top-0 left-0 w-1 h-1 bg-[#e57474] opacity-0 group-hover:opacity-40" />
-        <div className="absolute bottom-0 right-0 w-1 h-1 bg-[#e57474] opacity-0 group-hover:opacity-40" />
+        <div className="absolute top-0 left-0 w-1 h-1 bg-accent opacity-0 group-hover:opacity-40" />
+        <div className="absolute bottom-0 right-0 w-1 h-1 bg-accent opacity-0 group-hover:opacity-40" />
 
         {hasError ? (
           <AlertCircle className="w-4 h-4 text-amber-500/60" />
         ) : isPlaying ? (
-          <Volume2 className="w-4 h-4 text-[#e57474] opacity-80" />
+          <Volume2 className="w-4 h-4 text-accent" />
         ) : (
-          <VolumeX className="w-4 h-4 text-[#b3b9b8] opacity-30" />
+          <VolumeX className="w-4 h-4 text-slate-400 opacity-50" />
         )}
 
         {isPlaying && !hasError && (
@@ -206,14 +206,13 @@ export default function AudioStation() {
                 animate={{
                   height: [2, 5, 2],
                   opacity: [0.3, 0.6, 0.3],
-                  backgroundColor: ["#e57474", "#f2cecf", "#e57474"],
                 }}
                 transition={{
                   duration: 0.8 + i * 0.2,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="w-1 bg-[#e57474]"
+                className="w-0.5 bg-accent"
               />
             ))}
           </div>
@@ -228,10 +227,10 @@ export default function AudioStation() {
             exit={{ opacity: 0, x: -10 }}
             className="flex flex-col font-mono select-none"
           >
-            <div className="flex items-center gap-2 text-[9px] text-[#b3b9b8] uppercase tracking-[0.2em]">
-              <span className="text-[#e57474] opacity-60">♪</span>
+            <div className="flex items-center gap-2 text-[9px] text-slate-500 uppercase tracking-[0.2em] font-black">
+              <span className="text-accent opacity-60">♪</span>
               <span className="opacity-40">service:</span>
-              <span className="text-[#dadada]/60">{TRACK_NAME}</span>
+              <span className="text-slate-400">{TRACK_NAME}</span>
             </div>
           </motion.div>
         )}

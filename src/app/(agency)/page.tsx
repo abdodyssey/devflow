@@ -4,6 +4,7 @@ import WhoIHelp from "@/components/sections/who-i-help";
 import CTASection from "@/components/sections/cta";
 import Hero from "@/components/sections/hero";
 import WhyWorkWithMe from "@/components/sections/why-work-with-me";
+import PortfolioTeaser from "@/components/sections/portfolio-teaser";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export default async function HomePage() {
@@ -25,7 +26,13 @@ export default async function HomePage() {
 
       <ScrollReveal>
         <WhyWorkWithMe />
+      </ScrollReveal>
 
+      <ScrollReveal>
+        <PortfolioTeaser />
+      </ScrollReveal>
+
+      <ScrollReveal>
         <CTASection />
       </ScrollReveal>
     </section>

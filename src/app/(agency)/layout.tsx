@@ -8,7 +8,7 @@ export default function AgencyLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1a] selection:bg-blue-600/10 selection:text-blue-600">
+    <div className="min-h-screen bg-background text-foreground selection:bg-accent/10 selection:text-accent tracking-tight">
       <Navbar />
       <main className="flex flex-1 flex-col pt-0 pb-24">{children}</main>
       <Footer />

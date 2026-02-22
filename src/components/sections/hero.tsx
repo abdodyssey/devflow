@@ -7,59 +7,67 @@ import { heroData } from "@/data/landing";
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-transparent pt-28 pb-20">
-      {/* Background Decorative Element - Full Width background area */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-50/50 rounded-full blur-3xl -z-10" />
+    <section className="relative w-full bg-background pt-32 pb-24 overflow-hidden transition-colors duration-300">
+      {/* Subtle Grid Pattern Background */}
+      <div className="absolute inset-0 bg-size-[4rem_4rem] bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
 
-      <div className="relative flex min-h-[70vh] w-full max-w-7xl mx-auto flex-col items-center justify-center px-6 text-center">
-        {/* 2. Teks Utama dengan Animasi */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
+        {/* Label */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <span className="px-4 py-1.5 rounded-full border border-border bg-muted/50 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">
+            Digital Lab & Engineering
+          </span>
+        </motion.div>
+
+        {/* Massive Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="z-10 space-y-8"
+          className="max-w-[1000px]"
         >
-          <div className="inline-block px-4 py-1.5 mb-2 rounded-full border border-blue-100 bg-blue-50/50 text-blue-700 text-xs font-semibold tracking-wider uppercase">
-            Digital Agency Specialist
-          </div>
-          <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-[#0f172a] md:text-7xl lg:text-8xl px-4">
+          <h1 className="text-6xl md:text-8xl lg:text-[120px] font-black leading-[0.9] tracking-[-0.05em] text-foreground mb-10">
             {heroData.title}
             <br />
-            <span className="text-blue-600">{heroData.highlight}</span>
+            <span className="text-accent">{heroData.highlight}</span>
           </h1>
         </motion.div>
 
-        {/* 3. Deskripsi yang lebih spesifik */}
+        {/* Refined Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="z-10 mt-10 max-w-[750px] text-slate-600 text-lg md:text-xl leading-relaxed px-6"
+          className="max-w-[600px] text-slate-500 text-lg md:text-xl leading-relaxed mb-16"
         >
           {heroData.description}
         </motion.p>
 
-        {/* 4. CTA Buttons */}
+        {/* High-Contrast CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="z-10 mt-14 flex flex-col sm:flex-row items-center gap-6"
+          className="flex flex-col sm:flex-row items-center gap-4"
         >
           <Link
             href="#solution"
-            className="group inline-flex h-16 items-center justify-center rounded-full bg-[#0f172a] px-12 text-lg font-bold text-white transition-all hover:bg-blue-700 active:scale-95 shadow-xl shadow-blue-900/10"
+            className="group relative h-14 px-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-2xl transition-all hover:bg-indigo-700 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-indigo-500/20"
           >
             Lihat Solusi
-            <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
           <Link
             href="https://wa.me/6285840858761"
-            target="_blank"
-            className="inline-flex h-16 items-center justify-center rounded-full border border-slate-200 bg-white px-12 text-lg font-bold text-[#0f172a] transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95 shadow-sm"
+            className="h-14 px-10 flex items-center justify-center border-2 border-border text-foreground font-bold rounded-2xl transition-all hover:bg-muted active:scale-[0.98]"
           >
-            Hubungi Kami
+            Mulai Diskusi
           </Link>
         </motion.div>
       </div>

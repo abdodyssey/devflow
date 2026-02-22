@@ -1,16 +1,13 @@
+import Navbar from "@/components/shared/Navbar";
+
 export default function PortfolioLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div className="dark min-h-screen bg-[#141b1e] text-[#dadada] relative selection:bg-[#e57474]/30 selection:text-white font-sans">
-      {/* 
-          Everblush Engineering Lab Layout:
-          - Deep warm dark background (#141b1e)
-          - Warm off-white text (#dadada)
-          - Single page flow
-      */}
+    <div className="min-h-screen bg-background text-foreground relative selection:bg-accent/20 selection:text-accent font-sans">
+      <Navbar />
       {children}
     </div>
   );

@@ -24,8 +24,8 @@ const COMMANDS: Record<string, string | (() => string)> = {
 export default function EngineeringLab() {
   const [isOpen, setIsOpen] = useState(false);
   const [history, setHistory] = useState<LogEntry[]>([
-    { type: "out", text: "Engineering Lab v1.0.4 initialized." },
-    { type: "out", text: "Type 'help' for available procedures." },
+    { type: "out", text: "Research Console v2.4.0 initialized." },
+    { type: "out", text: "Ready for architectural assessment." },
   ]);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -49,17 +49,17 @@ export default function EngineeringLab() {
 
   const runDeployment = () => {
     const frames = [
-      "[░░░░░░░░░░] 0%",
-      "[██░░░░░░░░] 20%",
-      "[████░░░░░░] 40%",
-      "[██████░░░░] 60%",
-      "[████████░░] 80%",
-      "[██████████] 100%",
+      "[░░░░░░░░░░]",
+      "[██░░░░░░░░]",
+      "[████░░░░░░]",
+      "[██████░░░░]",
+      "[████████░░]",
+      "[██████████]",
     ];
 
     setHistory((prev) => [
       ...prev,
-      { type: "out", text: "Initializing production deployment..." },
+      { type: "out", text: "Synchronizing production environment..." },
     ]);
 
     frames.forEach((frame, i) => {
@@ -69,7 +69,7 @@ export default function EngineeringLab() {
           if (i > 0) newHistory.pop(); // Remove previous progress frame
           return [
             ...newHistory,
-            { type: "anim", text: `Build progress: ${frame}` },
+            { type: "anim", text: `Build_State: ${frame} ${i * 20}%` },
           ];
         });
         if (i === frames.length - 1) {
@@ -78,7 +78,7 @@ export default function EngineeringLab() {
               ...prev,
               {
                 type: "out",
-                text: "✓ Deployment successful: live at production_target",
+                text: "Success: Deployment verified across all nodes.",
               },
             ]);
           }, 400);
@@ -108,7 +108,7 @@ export default function EngineeringLab() {
     if (cmd === "sudo hire") {
       setHistory((prev) => [
         ...prev,
-        { type: "out", text: COMMANDS["sudo hire"] as string },
+        { type: "out", text: "Redirecting to primary contact portal..." },
       ]);
       setTimeout(() => {
         const contactSection = document.getElementById("contact");
@@ -128,7 +128,7 @@ export default function EngineeringLab() {
     } else {
       setHistory((prev) => [
         ...prev,
-        { type: "err", text: `Command not found: ${cmd}` },
+        { type: "err", text: `Unknown operation: ${cmd}` },
       ]);
     }
   };
@@ -139,15 +139,10 @@ export default function EngineeringLab() {
       <div className="fixed bottom-8 right-8 z-90">
         <button
           onClick={() => setIsOpen(true)}
-          className="font-mono text-[10px] text-[#e57474] opacity-50 hover:opacity-100 transition-opacity tracking-widest uppercase flex items-center gap-2 group"
+          className="font-mono text-[10px] text-accent font-black hover:opacity-100 transition-opacity tracking-widest uppercase flex items-center gap-3 group px-5 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-md"
         >
-          <span className="group-hover:translate-x-[-2px] transition-transform">
-            [
-          </span>
-          open_lab.sh
-          <span className="group-hover:translate-x-[2px] transition-transform">
-            ]
-          </span>
+          <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          Access_Console
         </button>
       </div>
 
@@ -157,57 +152,53 @@ export default function EngineeringLab() {
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
-            className="fixed bottom-24 right-8 w-[340px] md:w-[450px] z-100 font-mono"
+            className="fixed bottom-24 right-8 w-[340px] md:w-[500px] z-100 font-mono"
           >
-            {/* Terminal Panel */}
-            <div className="relative border border-[#232a2d] bg-[#141b1e]/95 rounded-sm shadow-2xl overflow-hidden">
-              {/* Pixel Corners */}
-              <div className="absolute top-0 left-0 w-1 h-1 bg-[#e57474]" />
-              <div className="absolute top-0 right-0 w-1 h-1 bg-[#e57474]" />
-              <div className="absolute bottom-0 left-0 w-1 h-1 bg-[#e57474]" />
-              <div className="absolute bottom-0 right-0 w-1 h-1 bg-[#e57474]" />
-
+            {/* Console Panel */}
+            <div className="relative border border-border bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden">
               {/* Header */}
-              <div className="bg-[#232a2d]/50 border-b border-[#232a2d] px-4 py-2 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <TerminalIcon className="w-3 h-3 text-[#e57474]" />
-                  <span className="text-[10px] text-[#b3b9b8] uppercase tracking-widest">
-                    engineering_lab_subsystem
+              <div className="bg-muted px-6 py-4 flex items-center justify-between border-b border-border">
+                <div className="flex items-center gap-3">
+                  <TerminalIcon className="w-4 h-4 text-accent" />
+                  <span className="text-[10px] text-slate-500 uppercase tracking-widest font-black">
+                    Research_Execution_Env
                   </span>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
+                  className="p-1 rounded-md hover:bg-muted-foreground/10 transition-colors"
                 >
-                  <X className="w-3.5 h-3.5" />
+                  <X className="w-4 h-4 text-slate-400" />
                 </button>
               </div>
 
               {/* Content */}
               <div
                 ref={scrollRef}
-                className="h-64 overflow-y-auto p-4 space-y-2 scrollbar-hide text-xs"
+                className="h-80 overflow-y-auto p-6 space-y-3 scrollbar-hide text-xs"
               >
                 {history.map((entry, i) => (
                   <div key={i} className="whitespace-pre-wrap leading-relaxed">
                     {entry.type === "cmd" && (
-                      <div className="flex gap-2">
-                        <span className="text-[#e57474]">$</span>
-                        <span className="text-[#dadada]">{entry.text}</span>
+                      <div className="flex gap-3">
+                        <span className="text-accent font-black">❯</span>
+                        <span className="text-foreground font-bold italic">
+                          {entry.text}
+                        </span>
                       </div>
                     )}
                     {entry.type === "out" && (
-                      <div className="text-[#b3b9b8] opacity-80">
+                      <div className="text-slate-500 font-medium pl-6">
                         {entry.text}
                       </div>
                     )}
                     {entry.type === "err" && (
-                      <div className="text-[#e57474]/70 italic">
-                        {entry.text}
+                      <div className="text-rose-500 italic pl-6">
+                        Error: {entry.text}
                       </div>
                     )}
                     {entry.type === "anim" && (
-                      <div className="text-[#8ccf7e] opacity-80">
+                      <div className="text-accent font-bold pl-6">
                         {entry.text}
                       </div>
                     )}
@@ -216,28 +207,28 @@ export default function EngineeringLab() {
 
                 <form
                   onSubmit={handleCommand}
-                  className="flex gap-2 items-center"
+                  className="flex gap-3 items-center pl-6"
                 >
-                  <span className="text-[#e57474]">$</span>
+                  <span className="text-accent font-black">❯</span>
                   <input
                     ref={inputRef}
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    className="flex-1 bg-transparent border-none outline-none text-[#dadada] caret-[#e57474]"
+                    className="flex-1 bg-transparent border-none outline-none text-foreground caret-accent font-bold"
                   />
                 </form>
               </div>
 
               {/* Status Bar */}
-              <div className="bg-[#232a2d]/30 px-4 py-1.5 flex items-center justify-between text-[8px] text-[#b3b9b8]/40 uppercase tracking-tighter">
-                <div className="flex gap-4">
-                  <span>ln 1, col 12</span>
-                  <span>utf-8</span>
+              <div className="bg-muted/50 px-6 py-3 flex items-center justify-between text-[8px] text-slate-400 uppercase tracking-widest font-black border-t border-border">
+                <div className="flex gap-6">
+                  <span>Latency: 12ms</span>
+                  <span>Region: ID-JKT-1</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 bg-[#8ccf7e] rounded-full animate-pulse" />
-                  <span>system_ready</span>
+                  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.3)]" />
+                  <span>Cloud_Encrypted</span>
                 </div>
               </div>
             </div>

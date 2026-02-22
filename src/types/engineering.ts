@@ -5,6 +5,7 @@ export interface Project {
   details: string;
   githubUrl?: string;
   liveUrl?: string;
+  hoverColor?: string;
 }
 
 export interface TechGroup {

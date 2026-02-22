@@ -27,69 +27,59 @@ const groups = [
 
 export default function EngineeringWorkLog() {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto bg-background transition-colors duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="md:col-span-1"
+          className="md:col-span-3 space-y-6"
         >
-          <div className="flex items-center gap-2 mb-4">
-            <h2 className="font-mono text-sm tracking-tight text-[#e57474] font-bold">
-              [ work.history ]
+          <div className="flex items-center gap-3">
+            <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+            <h2 className="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+              Work_Experience
             </h2>
           </div>
-          <div className="flex gap-1.5 h-0.5">
-            <div className="w-4 bg-[#e57474]" />
-            <div className="w-1 bg-[#e57474] opacity-50" />
-            <div className="w-0.5 bg-[#e57474] opacity-30" />
-          </div>
+          <div className="h-px w-full bg-border" />
         </motion.div>
 
-        <div className="md:col-span-3 space-y-12 font-mono">
+        <div className="md:col-span-9 space-y-20">
           {groups.map((log, idx) => (
             <motion.div
               key={log.role + idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative pl-10 border-l border-[#232a2d] group py-2"
+              transition={{ delay: idx * 0.1 }}
+              className="relative pl-12 border-l border-border group"
             >
-              {/* Pixel Timeline Indicator */}
-              <div className="absolute top-0 left-0 -translate-x-1/2 w-4 h-4 border border-[#232a2d] bg-[#141b1e] group-hover:border-[#e57474] transition-colors flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-[#e57474] opacity-40 group-hover:opacity-100 transition-opacity" />
-              </div>
+              {/* Refined Timeline Indicator */}
+              <div className="absolute top-0 left-0 -translate-x-1/2 w-3 h-3 bg-border group-hover:bg-accent transition-colors duration-300 rounded-full" />
 
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
                   <div>
-                    <h3 className="text-[#dadada] font-bold text-xl font-sans">
+                    <h3 className="text-foreground font-black text-2xl tracking-tighter">
                       {log.role}
                     </h3>
-                    <p className="text-sm text-[#e57474]/70 tracking-tight font-bold">
+                    <p className="text-sm text-accent font-bold tracking-wide mt-1">
                       {log.organization}
                     </p>
                   </div>
-                  <span className="text-[10px] text-[#b3b9b8] bg-[#232a2d]/50 px-4 py-1.5 rounded-sm border border-[#232a2d] uppercase tracking-widest whitespace-nowrap">
+                  <span className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">
                     {log.period}
                   </span>
                 </div>
 
-                <div className="text-[10px] text-[#b3b9b8]/40 uppercase tracking-[0.2em]">
-                  {"// core_contributions"}
-                </div>
-
-                <ul className="space-y-4">
+                <ul className="grid grid-cols-1 gap-4">
                   {log.contributions.map((item, i) => (
                     <li
                       key={i}
-                      className="text-[#b3b9b8] text-sm leading-relaxed flex items-start gap-4"
+                      className="text-slate-500 text-base leading-relaxed flex items-start gap-4"
                     >
-                      <span className="mt-2 text-[#e57474] font-bold text-xs select-none">
-                        #
-                      </span>
-                      <span className="font-sans">{item}</span>
+                      <div className="mt-2.5 w-1 h-1 rounded-full bg-border shrink-0" />
+                      <span className="font-medium">{item}</span>
                     </li>
                   ))}
                 </ul>

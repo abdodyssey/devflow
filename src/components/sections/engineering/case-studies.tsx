@@ -1,56 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Code } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
 import { engineeringProjects } from "@/data/engineering";
 
 export default function EngineeringCaseStudies() {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <section className="py-32 px-6 bg-background transition-colors duration-300">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
+        {/* Left Label */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="md:col-span-1"
+          className="md:col-span-3 space-y-6"
         >
-          <div className="flex items-center gap-2 mb-4">
-            <h2 className="font-mono text-sm tracking-tight text-[#e57474] font-bold">
-              [ case-studies.log ]
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-accent rounded-full" />
+            <h2 className="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+              Case_Studies_Log
             </h2>
           </div>
-          <div className="flex gap-1.5 h-0.5">
-            <div className="w-4 bg-[#e57474]" />
-            <div className="w-1 bg-[#e57474] opacity-50" />
-            <div className="w-0.5 bg-[#e57474] opacity-30" />
-          </div>
+          <div className="h-px w-full bg-border" />
         </motion.div>
 
-        <div className="md:col-span-3 space-y-16">
+        {/* Content */}
+        <div className="md:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {engineeringProjects.map((project, idx) => (
             <motion.div
               key={project.name}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group relative border border-[#232a2d] bg-[#1c2326]/30 rounded-sm overflow-hidden border-l-4 border-l-[#e57474]"
+              className="group flex flex-col h-full bg-background border border-border rounded-[2.5rem] p-8 md:p-10 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500"
             >
-              {/* Header Tab */}
-              <div className="bg-[#232a2d]/50 border-b border-[#232a2d] px-6 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Code className="w-3.5 h-3.5 text-[#e57474]" />
-                  <span className="font-mono text-[10px] text-[#b3b9b8] uppercase tracking-widest">
-                    Entry_{idx + 1}.json
-                  </span>
+              <div className="flex justify-between items-start gap-4 mb-8">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[9px] font-black text-accent uppercase tracking-widest bg-accent/10 px-2 py-1 rounded-full">
+                      P_0{idx + 1}
+                    </span>
+                    <span className="text-slate-300 text-xs">/</span>
+                    <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+                      {project.role}
+                    </span>
+                  </div>
+                  <h3 className="text-3xl font-black text-foreground tracking-tight leading-tight">
+                    {project.name}
+                  </h3>
                 </div>
-                <div className="flex items-center gap-4">
+
+                <div
+                  className="flex gap-2"
+                  style={
+                    {
+                      "--project-accent": project.hoverColor,
+                    } as React.CSSProperties
+                  }
+                >
                   {project.githubUrl && (
                     <Link
                       href={project.githubUrl}
-                      className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
+                      className="w-10 h-10 flex items-center justify-center rounded-xl border border-border text-slate-400 hover:text-(--project-accent) hover:border-(--project-accent) hover:bg-(--project-accent)/10 transition-all duration-300"
                     >
                       <Github className="w-4 h-4" />
                     </Link>
@@ -58,7 +72,7 @@ export default function EngineeringCaseStudies() {
                   {project.liveUrl && (
                     <Link
                       href={project.liveUrl}
-                      className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
+                      className="w-10 h-10 flex items-center justify-center rounded-xl bg-foreground text-background hover:bg-(--project-accent) transition-all duration-300"
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Link>
@@ -66,52 +80,30 @@ export default function EngineeringCaseStudies() {
                 </div>
               </div>
 
-              <div className="p-8 md:p-10 font-mono">
-                <div className="space-y-4">
-                  <div className="text-[#b3b9b8] text-sm">
-                    <span className="text-[#e57474]">project</span> &#123;
-                  </div>
-
-                  <div className="pl-6 space-y-2 border-l border-[#232a2d] ml-1">
-                    <div className="text-sm">
-                      <span className="text-[#f2cecf]/60 italic mr-2">
-                        name:
-                      </span>
-                      <span className="text-[#dadada]">{`"${project.name}"`}</span>
-                      ,
-                    </div>
-                    <div className="text-sm">
-                      <span className="text-[#f2cecf]/60 italic mr-2">
-                        role:
-                      </span>
-                      <span className="text-[#dadada]">{`"${project.role}"`}</span>
-                      ,
-                    </div>
-                    <div className="text-sm">
-                      <span className="text-[#f2cecf]/60 italic mr-2">
-                        stack:
-                      </span>
-                      <span className="text-[#dadada]">
-                        [ {project.stack.map((s) => `"${s}"`).join(", ")} ]
-                      </span>
-                      ,
-                    </div>
-                    <div className="text-sm">
-                      <span className="text-[#f2cecf]/60 italic mr-2">
-                        info:
-                      </span>
-                      <span className="text-[#b3b9b8]/80 text-[13px]">{`"${project.details}"`}</span>
-                    </div>
-                  </div>
-
-                  <div className="text-[#b3b9b8] text-sm">&#125;</div>
+              <div className="flex-1 space-y-8">
+                <div className="space-y-2">
+                  <span className="font-mono text-[9px] font-black text-slate-300 uppercase tracking-widest">
+                    Technical_Summary
+                  </span>
+                  <p className="text-slate-500 text-sm leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
+                    {project.details}
+                  </p>
                 </div>
 
-                {/* Subtle Pixel Detail Bottom Right */}
-                <div className="absolute bottom-2 right-2 flex gap-1">
-                  <div className="w-1 h-1 bg-[#e57474]/20" />
-                  <div className="w-1 h-1 bg-[#e57474]/20" />
-                  <div className="w-1 h-1 bg-[#e57474]/20" />
+                <div className="space-y-3 mt-auto pt-6 border-t border-border/50">
+                  <span className="font-mono text-[9px] font-black text-slate-300 uppercase tracking-widest">
+                    Stack_Deployment
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="px-2 py-0.5 text-[10px] font-bold text-slate-500 bg-muted rounded-md border border-border"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

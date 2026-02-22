@@ -16,7 +16,7 @@ export default function PortfolioPage() {
       <AudioStation />
       <PixelBackground />
       {/* Subtle Low-Opacity Grid Overlay */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.02] bg-size-[40px_40px] bg-[linear-gradient(to_right,#e57474_1px,transparent_1px),linear-gradient(to_bottom,#e57474_1px,transparent_1px)]" />
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03] bg-size-[40px_40px] bg-[linear-gradient(to_right,var(--accent)_1px,transparent_1px),linear-gradient(to_bottom,var(--accent)_1px,transparent_1px)]" />
 
       <div className="relative z-10 w-full">
         <ScrollReveal>

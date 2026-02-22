@@ -9,15 +9,16 @@ export const engineeringProjects: Project[] = [
       "Focus: Optimized Client-Side Performance dengan implementasi Debouncing, Ref-based caching, dan Race-condition handling pada proses autentikasi, menghasilkan initial load time di bawah 1.5 detik. Built a Scalable Design System berbasis Tailwind CSS dan Framer Motion, menghadirkan Professional-Grade UI yang responsif dengan fokus pada aksesibilitas dan High-End Aesthetics.",
     githubUrl: "#",
     liveUrl: "https://rafanovation.cloud/",
+    hoverColor: "#6366f1", // Indigo
   },
-  // You can easily add more projects here
   {
-    name: "Academic Information System",
-    role: "Fullstack Developer",
-    stack: ["Next.js", "PostgreSQL", "Prisma"],
-    details: "Focus: Relational modeling & scalable state synchronization",
+    name: "Go Skripsi",
+    role: "Frontend Developer",
+    stack: ["Next.js", "TailwindCSS"],
+    details: "Focus: Implementasi UI/UX yang modern dan responsif dengan Tailwind CSS, serta penggunaan Next.js untuk performa yang optimal.",
     githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://goskripsi.rafanovation.cloud/",
+    hoverColor: "#10b981", // Emerald
   },
   {
     name: "Infrastructure Dashboard",
@@ -26,6 +27,7 @@ export const engineeringProjects: Project[] = [
     details: "Focus: Real-time monitoring & high-availability inventory logic",
     githubUrl: "#",
     liveUrl: "#",
+    hoverColor: "#f43f5e", // Rose
   },
 ];
 

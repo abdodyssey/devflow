@@ -12,53 +12,61 @@ import { whoIHelpData } from "@/data/landing";
 
 export default function WhoIHelp() {
   return (
-    <section id="who-i-help" className="py-32 px-6 bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-24 space-y-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-4xl font-extrabold tracking-tight text-[#0f172a] sm:text-5xl lg:text-5xl">
-              Siapa yang Cocok <br />
-              <span className="text-blue-600">Kami Bantu?</span>
+    <section
+      id="who-i-help"
+      className="py-32 px-6 bg-background transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
+        {/* Left Label */}
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="md:col-span-3 space-y-6"
+        >
+          <div className="flex items-center gap-3">
+            <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+            <h2 className="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+              User_Archetypes
             </h2>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-          >
-            Layanan kami dirancang khusus untuk Anda yang serius ingin membenahi
-            fondasi digital bisnis, dari skala kecil hingga menengah.
-          </motion.p>
-        </div>
+          </div>
+          <div className="h-px w-full bg-border" />
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {whoIHelpData.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 group"
-            >
-              <div className="mb-8 flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                <item.icon className="w-7 h-7" />
-              </div>
-              <h3 className="text-2xl font-bold text-[#0f172a] mb-4">
-                {item.title}
-              </h3>
-              <p className="text-slate-500 text-base leading-relaxed">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+        {/* Content */}
+        <div className="md:col-span-9 space-y-24">
+          <div className="max-w-3xl space-y-8">
+            <h2 className="text-5xl md:text-7xl font-black tracking-tight text-foreground leading-[0.95]">
+              Who fits our <br />
+              <span className="text-slate-400">engineering model?</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whoIHelpData.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="group bg-muted/30 border border-border p-10 rounded-[2.5rem] hover:bg-background hover:shadow-2xl transition-all duration-500"
+                style={
+                  { "--accent-dynamic": item.hoverColor } as React.CSSProperties
+                }
+              >
+                <div className="mb-8 w-14 h-14 rounded-2xl bg-background border border-border flex items-center justify-center text-slate-400 group-hover:text-(--accent-dynamic) group-hover:border-(--accent-dynamic) group-hover:bg-(--accent-dynamic)/10 transition-all duration-500">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-black text-foreground mb-4 tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-slate-500 text-base leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

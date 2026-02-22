@@ -9,7 +9,9 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -19,21 +21,48 @@ const navItems = [
   { name: "Process", href: "#how-i-work" },
   { name: "Clients", href: "#who-i-help" },
   { name: "Why Us", href: "#why-me" },
+  { name: "Portfolio", href: "/portfolio" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   const isProjectPage =
     pathname?.startsWith("/projects/") || pathname?.startsWith("/portfolio");
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+
+    if (latest > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
 
   return (
     /* Floating Nav Bar */
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none w-full">
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        variants={{
+          visible: { y: 0, opacity: 1 },
+          hidden: { y: -100, opacity: 0 },
+        }}
+        animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="pointer-events-auto w-full max-w-5xl border border-slate-200/50 bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-2xl shadow-blue-900/5"
+        className={`pointer-events-auto w-full max-w-5xl transition-all duration-300 rounded-[2rem] shadow-2xl ${
+          scrolled
+            ? "border border-border bg-background/90 backdrop-blur-xl shadow-blue-900/5"
+            : "border border-transparent bg-background/50 backdrop-blur-md shadow-none"
+        }`}
       >
         <div className="container mx-auto flex h-16 items-center justify-between px-8">
           {/* Logo devflow. */}
@@ -48,10 +77,10 @@ export default function Navbar() {
                 alt="DevFlow Logo"
                 width={28}
                 height={28}
-                className="h-7 w-auto mix-blend-multiply dark:mix-blend-screen"
+                className="h-7 w-auto transition-all dark:invert"
               />
-              <span className="text-xl font-black tracking-tighter text-[#0f172a]">
-                devflow<span className="text-blue-600">.</span>
+              <span className="text-xl font-black tracking-tighter text-foreground">
+                devflow<span className="text-accent">.</span>
               </span>
             </motion.div>
           </Link>
@@ -69,17 +98,19 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors tracking-wide"
+                      className="relative text-sm font-bold text-slate-500 hover:text-accent transition-colors tracking-wide group"
                     >
                       {item.name}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
                     </Link>
                   </motion.div>
                 ))}
 
+                <ThemeToggle />
                 <Link
                   href="https://wa.me/6285840858761"
                   target="_blank"
-                  className="bg-[#0f172a] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/10 flex items-center gap-2"
+                  className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-bold hover:bg-accent transition-all shadow-lg shadow-accent/10 flex items-center gap-2"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Contact
@@ -89,13 +120,14 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Trigger */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-4">
+            <ThemeToggle />
             {!isProjectPage && (
               <Sheet>
                 <SheetTrigger asChild>
                   <motion.button
                     whileTap={{ scale: 0.9 }}
-                    className="p-2 text-slate-600"
+                    className="p-2 text-foreground"
                     aria-label="Open Menu"
                   >
                     <Menu className="h-6 w-6" />
@@ -103,10 +135,10 @@ export default function Navbar() {
                 </SheetTrigger>
                 <SheetContent
                   side="right"
-                  className="w-[300px] border-l border-slate-100 p-8 bg-white text-slate-900"
+                  className="w-[300px] border-l border-border p-8 bg-background text-foreground"
                 >
-                  <SheetTitle className="text-left font-black text-2xl tracking-tighter text-[#0f172a] mb-12">
-                    devflow<span className="text-blue-600">.</span>
+                  <SheetTitle className="text-left font-black text-2xl tracking-tighter text-foreground mb-12">
+                    devflow<span className="text-accent">.</span>
                   </SheetTitle>
                   <nav className="flex flex-col gap-8">
                     {navItems.map((item, idx) => (
@@ -119,7 +151,7 @@ export default function Navbar() {
                         <SheetClose asChild>
                           <Link
                             href={item.href}
-                            className="text-xl font-bold text-slate-500 hover:text-blue-600 transition-colors"
+                            className="text-xl font-bold text-slate-500 hover:text-accent transition-colors"
                           >
                             {item.name}
                           </Link>
@@ -136,7 +168,7 @@ export default function Navbar() {
                           href="https://wa.me/6285840858761"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-6 flex h-14 items-center justify-center rounded-2xl bg-[#0f172a] px-8 text-lg font-bold text-white w-full shadow-xl shadow-blue-900/10"
+                          className="mt-6 flex h-14 items-center justify-center rounded-2xl bg-primary px-8 text-lg font-bold text-primary-foreground w-full shadow-xl shadow-accent/10 hover:bg-accent transition-colors"
                         >
                           Let&apos;s Talk
                         </Link>
