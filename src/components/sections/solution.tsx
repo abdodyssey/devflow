@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Zap, TrendingUp, ShieldCheck } from "lucide-react";
+import { solutionsData } from "@/data/landing";
 
 /**
  * Premium Solution Section
@@ -9,33 +9,6 @@ import { Sparkles, Zap, TrendingUp, ShieldCheck } from "lucide-react";
  * - Strong Typography
  * - White Surface Cards
  */
-
-const solutions = [
-  {
-    title: "Transformasi Operasional",
-    description:
-      "Ubah proses manual yang lambat menjadi alur kerja digital yang terotomatisasi. Efisiensi meningkat, kesalahan manusia berkurang drastis.",
-    icon: <Sparkles className="h-6 w-6" />,
-  },
-  {
-    title: "Otomatisasi Cerdas",
-    description:
-      "Biarkan teknologi bekerja untuk Anda. Sistem akan menangani tugas administratif rutin secara otomatis, memberi Anda waktu untuk fokus pada strategi.",
-    icon: <Zap className="h-6 w-6" />,
-  },
-  {
-    title: "Skalabilitas Bisnis",
-    description:
-      "Bangun fondasi teknologi yang kokoh. Sistem dirancang untuk tetap stabil dan cepat bahkan saat transaksi bisnis Anda meningkat berkali lipat.",
-    icon: <TrendingUp className="h-6 w-6" />,
-  },
-  {
-    title: "Solusi Tepat Guna",
-    description:
-      "Fokus pada dampak, bukan kerumitan. Antarmuka yang intuitif memastikan tim Anda dapat langsung menggunakan sistem tanpa pelatihan panjang.",
-    icon: <ShieldCheck className="h-6 w-6" />,
-  },
-];
 
 export default function SolutionSection() {
   return (
@@ -68,7 +41,7 @@ export default function SolutionSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {solutions.map((item, idx) => (
+          {solutionsData.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -79,7 +52,7 @@ export default function SolutionSection() {
             >
               <div className="mb-8 inline-flex p-4 rounded-2xl bg-blue-50 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
                 <div className="group-hover:text-white text-blue-600 transition-colors duration-500">
-                  {item.icon}
+                  <item.icon className="h-6 w-6" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-[#0f172a]">

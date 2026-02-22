@@ -4,20 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github, Code } from "lucide-react";
 import Link from "next/link";
 
-const projects = [
-  {
-    name: "Academic Information System",
-    role: "Fullstack Developer",
-    stack: ["Next.js", "PostgreSQL", "Prisma"],
-    details: "Focus: Relational modeling & scalable state synchronization",
-  },
-  {
-    name: "Infrastructure Dashboard",
-    role: "Lead Engineer",
-    stack: ["React", "TypeScript", "Supabase"],
-    details: "Focus: Real-time monitoring & high-availability inventory logic",
-  },
-];
+import { engineeringProjects } from "@/data/engineering";
 
 export default function EngineeringCaseStudies() {
   return (
@@ -42,7 +29,7 @@ export default function EngineeringCaseStudies() {
         </motion.div>
 
         <div className="md:col-span-3 space-y-16">
-          {projects.map((project, idx) => (
+          {engineeringProjects.map((project, idx) => (
             <motion.div
               key={project.name}
               initial={{ opacity: 0, y: 15 }}
@@ -60,18 +47,22 @@ export default function EngineeringCaseStudies() {
                   </span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Link
-                    href="#"
-                    className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </Link>
+                  {project.githubUrl && (
+                    <Link
+                      href={project.githubUrl}
+                      className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                    </Link>
+                  )}
+                  {project.liveUrl && (
+                    <Link
+                      href={project.liveUrl}
+                      className="text-[#b3b9b8] hover:text-[#e57474] transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </div>
 

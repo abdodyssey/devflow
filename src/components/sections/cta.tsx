@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { MessageCircle, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+import { ctaData, socialLinks } from "@/data/landing";
+
 /**
  * Premium CTA Section
  * - Light Minimal Theme
@@ -40,8 +42,8 @@ export default function CTASection() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl font-extrabold tracking-tight text-[#0f172a] sm:text-7xl lg:text-8xl leading-[1.1]"
             >
-              Siap Membenahi <br className="hidden sm:block" />
-              <span className="text-blue-600">Bisnis Anda?</span>
+              {ctaData.title} <br className="hidden sm:block" />
+              <span className="text-blue-600">{ctaData.highlight}</span>
             </motion.h2>
 
             <motion.p
@@ -55,9 +57,7 @@ export default function CTASection() {
               }}
               className="text-xl text-slate-500 md:text-2xl max-w-2xl mx-auto leading-relaxed"
             >
-              Jangan biarkan proses manual menghambat pertumbuhan. Mari kita
-              diskusikan solusi digital yang paling tepat untuk efisiensi
-              operasional Anda.
+              {ctaData.description}
             </motion.p>
           </div>
 
@@ -69,7 +69,7 @@ export default function CTASection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Link
-              href="https://wa.me/6285840858761?text=Halo%20saya%20ingin%20konsultasi%20tentang%20project%20saya"
+              href={socialLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto overflow-hidden group rounded-full"
@@ -81,10 +81,7 @@ export default function CTASection() {
               </div>
             </Link>
 
-            <Link
-              href="mailto:devflow99@gmail.com"
-              className="w-full sm:w-auto"
-            >
+            <Link href={socialLinks.email} className="w-full sm:w-auto">
               <button className="w-full sm:w-auto h-16 px-12 rounded-full border border-slate-200 bg-white text-[#0f172a] hover:bg-slate-50 hover:border-slate-300 transition-all font-bold text-lg flex items-center justify-center gap-3 shadow-md active:scale-95">
                 <Mail className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
                 Kirim Email

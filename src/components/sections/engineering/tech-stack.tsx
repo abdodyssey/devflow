@@ -2,24 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const groups = [
-  {
-    title: "frontend",
-    items: ["react", "nextjs", "typescript", "tailwind", "framer-motion"],
-  },
-  {
-    title: "backend",
-    items: ["nodejs", "express", "prisma-orm", "nextauth", "zod"],
-  },
-  {
-    title: "database",
-    items: ["postgresql", "mysql", "supabase", "redis"],
-  },
-  {
-    title: "toolchain",
-    items: ["git", "docker", "vercel", "linux-shell", "postman"],
-  },
-];
+import { techStackGroups } from "@/data/engineering";
 
 // Helper for pixel folder icon
 const PixelFolder = () => (
@@ -52,7 +35,7 @@ export default function EngineeringTechStack() {
         </motion.div>
 
         <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-12">
-          {groups.map((group, idx) => (
+          {techStackGroups.map((group, idx) => (
             <motion.div
               key={group.title}
               initial={{ opacity: 0, y: 10 }}

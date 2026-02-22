@@ -1,40 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Target, PenTool, Rocket, BarChart3 } from "lucide-react";
-
-const steps = [
-  {
-    title: "Diskusi & Pemahaman Masalah",
-    description:
-      "Kita mulai dengan diskusi mendalam. Kami perlu mengerti di mana letak kebocoran efisiensi bisnis Anda sebelum menawarkan solusi.",
-    icon: Search,
-  },
-  {
-    title: "Perancangan Strategi",
-    description:
-      "Kami merancang sistem yang tidak hanya canggih, tapi juga mudah digunakan oleh tim Anda. Solusi yang pas, bukan yang paling mahal.",
-    icon: Target,
-  },
-  {
-    title: "Eksekusi & Pengembangan",
-    description:
-      "Proses pengerjaan dilakukan dengan terstruktur dan teliti. Fokus pada keamanan data, kecepatan akses, dan kestabilan sistem.",
-    icon: PenTool,
-  },
-  {
-    title: "Pelatihan & Serah Terima",
-    description:
-      "Sistem baru tidak akan berguna jika sulit dipakai. Kami akan melatih tim Anda sampai mereka benar-benar nyaman menggunakannya.",
-    icon: Rocket,
-  },
-  {
-    title: "Pendampingan Jangka Panjang",
-    description:
-      "Bisnis Anda terus bergerak, begitupun teknologinya. Kami siap membantu update dan maintenance agar sistem selalu optimal.",
-    icon: BarChart3,
-  },
-];
+import { howIWorkData } from "@/data/landing";
 
 export default function HowIWork() {
   return (
@@ -62,7 +29,7 @@ export default function HowIWork() {
           <div className="absolute left-[31px] top-4 bottom-4 w-[2px] bg-slate-100 hidden sm:block" />
 
           <div className="space-y-20">
-            {steps.map((step, idx) => (
+            {howIWorkData.map((step, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}

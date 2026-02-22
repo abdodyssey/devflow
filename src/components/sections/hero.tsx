@@ -3,6 +3,7 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { heroData } from "@/data/landing";
 
 export default function Hero() {
   return (
@@ -22,9 +23,9 @@ export default function Hero() {
             Digital Agency Specialist
           </div>
           <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-[#0f172a] md:text-7xl lg:text-8xl px-4">
-            Transformasi Digital
+            {heroData.title}
             <br />
-            <span className="text-blue-600">untuk Bisnis Anda</span>
+            <span className="text-blue-600">{heroData.highlight}</span>
           </h1>
         </motion.div>
 
@@ -35,9 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="z-10 mt-10 max-w-[750px] text-slate-600 text-lg md:text-xl leading-relaxed px-6"
         >
-          Miliki website profesional dan sistem manajemen yang terintegrasi
-          untuk mendigitalkan operasional bisnis Anda agar lebih efisien,
-          efektif, dan siap tumbuh di era digital masa kini.
+          {heroData.description}
         </motion.p>
 
         {/* 4. CTA Buttons */}

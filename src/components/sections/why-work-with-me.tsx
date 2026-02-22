@@ -1,14 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  MessageSquare,
-  Settings2,
-  Zap,
-  Target,
-  Handshake,
-  UserCheck,
-} from "lucide-react";
+import { whyWorkWithMeData } from "@/data/landing";
+import { UserCheck } from "lucide-react";
 
 /**
  * Premium Why Work With Me Section
@@ -16,39 +10,6 @@ import {
  * - Strong Typography
  * - Generous Whitespace
  */
-
-const advantages = [
-  {
-    title: "Orientasi Profit & Efisiensi",
-    description:
-      "Lebih dari sekadar kode. Kami merancang sistem yang berdampak langsung pada penghematan biaya dan peningkatan profit bisnis Anda.",
-    icon: Target,
-  },
-  {
-    title: "Komunikasi Langsung",
-    description:
-      "Anda berdiskusi langsung dengan pembuatnya. Tidak ada distorsi informasi lewat sales atau project manager.",
-    icon: MessageSquare,
-  },
-  {
-    title: "Investasi Cerdas",
-    description:
-      "Dapatkan kualitas sistem kelas atas dengan biaya yang dialokasikan sepenuhnya untuk pengembangan, bukan overhead kantor mewah.",
-    icon: Zap,
-  },
-  {
-    title: "Sesuai Karakter Bisnis",
-    description:
-      "Anda tidak perlu mengubah cara kerja demi sistem. Kami yang membangun sistem agar pas dengan alur unik bisnis Anda.",
-    icon: Settings2,
-  },
-  {
-    title: "Dukungan Berkelanjutan",
-    description:
-      "Hubungan kita tidak putus saat website rilis. Kami siap menjaga performa sistem Anda dalam jangka panjang.",
-    icon: Handshake,
-  },
-];
 
 export default function WhyWorkWithMe() {
   return (
@@ -98,7 +59,7 @@ export default function WhyWorkWithMe() {
 
           {/* Right Side: Advantage List */}
           <div className="lg:col-span-3 space-y-6 flex flex-col pt-4">
-            {advantages.map((item, idx) => (
+            {whyWorkWithMeData.map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: 20 }}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Store, LineChart, Users } from "lucide-react";
+import { whoIHelpData } from "@/data/landing";
 
 /**
  * Premium Who I Help Section
@@ -9,27 +9,6 @@ import { Store, LineChart, Users } from "lucide-react";
  * - Trusted feel
  * - Generous spacing
  */
-
-const targets = [
-  {
-    title: "Pemilik Bisnis & UMKM",
-    description:
-      "Anda yang ingin bisnisnya 'naik kelas'. Punya website resmi agar lebih dipercaya, serta sistem operasional yang tidak lagi manual.",
-    icon: Store,
-  },
-  {
-    title: "Perusahaan Berkembang",
-    description:
-      "Bisnis yang transaksinya makin ramai. Anda butuh sistem inventory, keuangan, atau manajemen tim yang lebih serius dan terintegrasi.",
-    icon: LineChart,
-  },
-  {
-    title: "Organisasi & Profesional",
-    description:
-      "Institusi, komunitas, atau konsultan yang membutuhkan platform digital representatif untuk menjangkau audiens dan melayani anggota.",
-    icon: Users,
-  },
-];
 
 export default function WhoIHelp() {
   return (
@@ -60,7 +39,7 @@ export default function WhoIHelp() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {targets.map((item, idx) => (
+          {whoIHelpData.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
