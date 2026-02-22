@@ -29,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1000px]"
+          className="max-w-250"
         >
           <h1 className="text-6xl md:text-8xl lg:text-[120px] font-black leading-[0.9] tracking-[-0.05em] text-foreground mb-10">
             {heroData.title}

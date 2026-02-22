@@ -15,19 +15,11 @@ export const engineeringProjects: Project[] = [
     name: "Go Skripsi",
     role: "Frontend Developer",
     stack: ["Next.js", "TailwindCSS"],
-    details: "Focus: Implementasi UI/UX yang modern dan responsif dengan Tailwind CSS, serta penggunaan Next.js untuk performa yang optimal.",
+    details:
+      "Focus: Implementasi UI/UX yang modern dan responsif dengan Tailwind CSS, serta penggunaan Next.js untuk performa yang optimal.",
     githubUrl: "#",
     liveUrl: "https://goskripsi.rafanovation.cloud/",
     hoverColor: "#10b981", // Emerald
-  },
-  {
-    name: "Infrastructure Dashboard",
-    role: "Lead Engineer",
-    stack: ["React", "TypeScript", "Supabase"],
-    details: "Focus: Real-time monitoring & high-availability inventory logic",
-    githubUrl: "#",
-    liveUrl: "#",
-    hoverColor: "#f43f5e", // Rose
   },
 ];
 

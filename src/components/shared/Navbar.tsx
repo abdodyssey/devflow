@@ -20,7 +20,7 @@ const navItems = [
   { name: "Solutions", href: "#solution" },
   { name: "Process", href: "#how-i-work" },
   { name: "Clients", href: "#who-i-help" },
-  { name: "Why Us", href: "#why-me" },
+  { name: "Why Us", href: "#why-us" },
   { name: "Portfolio", href: "/portfolio" },
 ];
 

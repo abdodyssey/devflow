@@ -75,10 +75,14 @@ export default function PortfolioTeaser() {
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <Link href="/portfolio">
-                  <ShimmerButton className="shadow-2xl">
-                    <span className="whitespace-pre-wrap text-center text-sm font-semibold leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg flex items-center gap-2">
+                  <ShimmerButton
+                    className="shadow-2xl"
+                    background="var(--primary)"
+                    shimmerColor="#ffffff"
+                  >
+                    <span className="whitespace-pre-wrap text-center text-sm font-black leading-none tracking-tight text-primary-foreground lg:text-lg flex items-center gap-2">
                       Eksplorasi Engineering Lab
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5 shrink-0" />
                     </span>
                   </ShimmerButton>
                 </Link>

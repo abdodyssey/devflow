@@ -6,7 +6,7 @@ import { whyWorkWithMeData } from "@/data/landing";
 export default function WhyWorkWithMe() {
   return (
     <section
-      id="why-me"
+      id="why-us"
       className="py-32 px-6 bg-muted/20 border-t border-border transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
